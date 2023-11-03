@@ -11,8 +11,8 @@ class Dice {
 
     public int roll() {
         Random random = new Random();
-        int randomInt = random.nextInt(this.dieSides);
+        int randomInt = random.nextInt(this.dieSides)+1;
 
-        return randomInt + 1;
+        return randomInt;
     }
 }
