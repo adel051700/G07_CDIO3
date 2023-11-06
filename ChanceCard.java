@@ -48,7 +48,7 @@ public class ChanceCard
                         }
                         else if (individualValues[k].equals("text"))
                         {
-                            
+                            System.out.println(individualValues[k+1]);
                         } 
                         {
 
