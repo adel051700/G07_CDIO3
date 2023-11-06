@@ -7,17 +7,22 @@ public class ChanceCard
     private String text;
     private int tilesToMove;
     private int MoneyToChange;
-
-    private int deltaBalance;
     ChanceCard(String name)
     {
         this.name=name;
     }
 
-    public void changeDeltaBalance(int changeBalance)
+    private void setMoneyToChange(int changeBalance)
     {
-        this.deltaBalance += changeBalance;
+        this.MoneyToChange = changeBalance;
     }
+
+    private void setText(String text)
+    {
+        this.text = text;
+    }
+ 
+
     public static void main(String[] args)
     {
         getChanceCardsFromFile("chancecards.csv");
@@ -44,11 +49,11 @@ public class ChanceCard
                     {
                         if (individualValues[k].equals("moneyChange"))
                         {
-                            System.out.println(individualValues[k+1]);
+                            workingCard.setMoneyToChange(Integer.parseInt(individualValues[k+1]));
                         }
                         else if (individualValues[k].equals("text"))
                         {
-                            System.out.println(individualValues[k+1]);
+                            workingCard.setText(individualValues[k+1]);
                         } 
                         {
 
