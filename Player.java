@@ -15,8 +15,16 @@ class Player {
         return skipPlayerTurn;
     }
 
+    public Boolean setSkipPlayerTurn(Boolean change) {
+        return skipPlayerTurn = change;
+    }
+
     public Boolean getIsInPrison() {
         return isInPrison;
+    }
+
+    public Boolean setIsInPrison(Boolean change) {
+        return isInPrison = change;
     }
 
     public String toString() {
