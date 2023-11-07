@@ -3,10 +3,10 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class ChanceCard 
 {    
-    private String name;
-    private String text;
-    private int tilesToMove;
-    private int MoneyToChange;
+    private String name = "";
+    private String text = "";
+    private int tilesToMove = 0;
+    private int MoneyToChange = 0;
     ChanceCard(String name)
     {
         this.name=name;
