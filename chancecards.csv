@@ -4,5 +4,5 @@ Free space;text:Advance to a light blue or red space. If one is available get it
 Free space;text:Advance to a pink or dark blue space. If one is available get it for free, otherwise pay rent to the owner.;MoneyChange:0;NextAction:moveTo:pink, dark blue
 Free space;text:Advance to an orange or green space. If one is available get it for free, otherwise pay rent to the owner.;MoneyChange:0;NextAction:moveTo:orange, green
 Free space;text:Advance to an orange space. If one is available get it for free, otherwise pay rent to the owner.;MoneyChange:0;NextAction:moveTo:moveTo:orange
-Free space;text:Advance to a red space. If one is available get it for free, Otherwise pay rent to the owner.;MoneyChange:0;NextAction:moveTo:red
+Free space;text:Advance to a red space. If one is available get it for free, Otherwise pay rent to the owner.;MoneyChange:0;NextAction:mo
 Free space;text:Advance to a light blue space. If one is available get it for free, otherwise pay rent to the owner.;MoneyChange:0;
