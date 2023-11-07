@@ -1,51 +1,100 @@
 import java.io.File;
-
+import java.util.Scanner;
+import java.util.ArrayList;
 public class ChanceCard 
 {    
     private String name;
     private String text;
     private int tilesToMove;
     private int MoneyToChange;
-
-    private int deltaBalance;
-    ChanceCard(String name, String text, int tilesToMove, int MoneyToChange)
+    ChanceCard(String name)
     {
         this.name=name;
-        this.text=text;
-        this.tilesToMove=tilesToMove;
-        this.MoneyToChange=MoneyToChange;
-
+    }
+    public String getName()
+    {
+        return this.name;
     }
 
-    public void changeDeltaBalance(int changeBalance)
+    private void setMoneyToChange(int changeBalance)
     {
-        this.deltaBalance += changeBalance;
+        this.MoneyToChange = changeBalance;
+    }
+    public int getMoneyToChange()
+    {
+        return this.MoneyToChange;
     }
 
-    public static ChanceCard[] getChanceCardsFromFile(String language)
+    private void setText(String text)
     {
-        int numberOfChancecard=20;
-        ChanceCard[] Chancearr= new ChanceCard[numberOfChancecard];
-        try{
-            var fileToRead= new File(language +".csv");
-            var Scanner = new java.util.Scanner(fileToRead);
-            int i=0;
-            while (Scanner.hasNextLine()){
-                String chanceCard=Scanner.nextLine();
-                String[] ChanceCards=chanceCard.split(";");
-                String name=ChanceCards[0];
-                String text=ChanceCards[1];
-                int tilesToMove=Integer.parseInt(ChanceCards[2]);
-                int MoneyToChange=Integer.parseInt(ChanceCards[3]);
-                     
-                Chancearr[i]=new ChanceCard(name,text, tilesToMove, MoneyToChange);
-                i++;
+        this.text = text;
+    }
+    public String getText()
+    {
+        return this.text;
+    }
+    
+    private void setTilesToMove(int tilesToMove)
+    {
+        this.tilesToMove = tilesToMove;
+    }
+    
+    public int getTilesToMove()
+    {
+        return this.tilesToMove;
+    }
+ 
+
+    public static void main(String[] args)
+    {
+        var arr = getChanceCardsFromFile("chancecards.csv");
+        System.out.println(arr.get(0).getText());
+    }
+
+    public static ArrayList<ChanceCard> getChanceCardsFromFile(String filename)
+    {
+        ArrayList<ChanceCard> chanceCards = new ArrayList<ChanceCard>();
+        
+        try
+        {
+            File fileToRead= new File(filename);
+            Scanner Scanner = new Scanner(fileToRead);
+
+            while (Scanner.hasNextLine())
+            {
+                String parsedLine = Scanner.nextLine();
+                String[] chanceCard = parsedLine.split(";");
+                ChanceCard workingCard = new ChanceCard(chanceCard[0]);
+                for (int i = 1; i < chanceCard.length;i++)
+                {
+                    String[] individualValues = chanceCard[i].split(":");
+                    for (int k = 0; k < individualValues.length; k++)
+                    {
+                        if (individualValues[k].equals("moneyChange"))
+                        {
+                            workingCard.setMoneyToChange(Integer.parseInt(individualValues[k+1]));
+                        }
+                        else if (individualValues[k].equals("text"))
+                        {
+                            workingCard.setText(individualValues[k+1]);
+                        }
+                        else if (individualValues[k].equals("move"))
+                        {
+                            workingCard.setTilesToMove(Integer.parseInt(individualValues[k+1]));
+                            
+                        }
+                        
+                    }
+                }
+                chanceCards.add(workingCard);
+
             }
             Scanner.close();
         }
-        catch (Exception e){
-            System.out.println(e + " Error");
+        catch (Exception error)
+        {
+            System.out.println(error + " Error");
         }
-        return Chancearr;
+        return chanceCards;
     }
 }
