@@ -11,21 +11,44 @@ public class ChanceCard
     {
         this.name=name;
     }
+    public String getName()
+    {
+        return this.name;
+    }
 
     private void setMoneyToChange(int changeBalance)
     {
         this.MoneyToChange = changeBalance;
+    }
+    public int getMoneyToChange()
+    {
+        return this.MoneyToChange;
     }
 
     private void setText(String text)
     {
         this.text = text;
     }
+    public String getText()
+    {
+        return this.text;
+    }
+    
+    private void setTilesToMove(int tilesToMove)
+    {
+        this.tilesToMove = tilesToMove;
+    }
+    
+    public int getTilesToMove()
+    {
+        return this.tilesToMove;
+    }
  
 
     public static void main(String[] args)
     {
-        getChanceCardsFromFile("chancecards.csv");
+        var arr = getChanceCardsFromFile("chancecards.csv");
+        System.out.println(arr.get(0).getText());
     }
 
     public static ArrayList<ChanceCard> getChanceCardsFromFile(String filename)
@@ -54,13 +77,16 @@ public class ChanceCard
                         else if (individualValues[k].equals("text"))
                         {
                             workingCard.setText(individualValues[k+1]);
-                        } 
+                        }
+                        else if (individualValues[k].equals("move"))
                         {
-
+                            workingCard.setTilesToMove(Integer.parseInt(individualValues[k+1]));
+                            
                         }
                         
                     }
                 }
+                chanceCards.add(workingCard);
 
             }
             Scanner.close();
