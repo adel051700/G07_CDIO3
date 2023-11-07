@@ -2,7 +2,9 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class ChanceCard 
-{    
+{   
+    public static int amount=Monopoly.getAmountofplayers();
+    //We need to add a variable to change amount of all players
     private String name = "";
     private String text = "";
     private int tilesToMove = 0;
@@ -72,6 +74,9 @@ public class ChanceCard
                     {
                         if (individualValues[k].equals("moneyChange"))
                         {
+                            if (individualValues[k+1].equals("getFromPlayers")){
+                                workingCard.setMoneyToChange(amount);
+                            }
                             workingCard.setMoneyToChange(Integer.parseInt(individualValues[k+1]));
                         }
                         else if (individualValues[k].equals("text"))
