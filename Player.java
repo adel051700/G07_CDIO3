@@ -4,6 +4,7 @@ class Player {
     private int bankBalance;
     public Boolean skipPlayerTurn = false;
     public Boolean isInPrison = false;
+    public Boolean isBankrupt = false;
 
     public Player (String name, String tokenCharacter, int bankBalance) {
         this.name = name;
@@ -36,6 +37,14 @@ class Player {
     }
 
     public int setBankbalnce(int alphaChange) {
-        return this.bankBalance += alphaChange;
+        if ((this.bankBalance += alphaChange) < 0) {
+            return this.bankBalance = 0;
+        } else {
+            return this.bankBalance += alphaChange; 
+        }
+    }
+
+    public Boolean getIsBankrupt() {
+        return getBankBalnce() == 0;
     }
 }
