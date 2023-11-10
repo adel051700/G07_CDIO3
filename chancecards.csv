@@ -3,7 +3,7 @@ Free space;text:Advance to a brown or yellow space. If one is available get it f
 Free space;text:Advance to a light blue or red space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveTo:light blue, red
 Free space;text:Advance to a pink or dark blue space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveTo:pink, dark blue
 Free space;text:Advance to an orange or green space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveTo:orange, green
-Free space;text:Advance to an orange space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveTo:moveTo:orange
+Free space;text:Advance to an orange space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveTo:orange
 Free space;text:Advance to a red space. If one is available get it for free, Otherwise pay rent to the owner.;NextAction:moveTo:red
 Free space;text:Advance to a light blue space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveTo:light blue
 Skatepark; Advance to the Skatepark. If no one owns it, get it for free, otherwise pay rent to the owner.; NextAction:moveTo:Skatepark
