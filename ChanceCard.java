@@ -75,7 +75,7 @@ public class ChanceCard
                         if (individualValues[k].equals("moneyChange"))
                         {
                             if (individualValues[k+1].equals("getFromPlayers")){
-                                workingCard.setMoneyToChange(amount);
+                                workingCard.setMoneyToChange(amount * Integer.parseInt(individualValues[k+2]));
                             }
                             workingCard.setMoneyToChange(Integer.parseInt(individualValues[k+1]));
                         }
@@ -86,6 +86,10 @@ public class ChanceCard
                         else if (individualValues[k].equals("move"))
                         {
                             workingCard.setTilesToMove(Integer.parseInt(individualValues[k+1]));  
+                        }
+                        else if (individualValues[k].equals("NextAction"))
+                        {
+                            if (individualValues[k+1].equals(""))
                         }
                         
                     }

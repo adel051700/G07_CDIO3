@@ -9,5 +9,5 @@ Free space;text:Advance to a light blue space. If one is available get it for fr
 Skatepark; Advance to the Skatepark. If no one owns it, get it for free, otherwise pay rent to the owner.; NextAction:moveTo:Skatepark
 Boardwalk;Advance to Boardwalk. If no one owns it, get it for free, otherwise pay rent to the owner.;NextAction:moveTo:Boardwalk
 Homework;You've made all your homework. Collect $2 from the bank;MoneyChange:2
-Birthday; It's your birthday. Everyone gives you $1. Happy Birthday;NextAction:getFromPlayers:1
+Birthday; It's your birthday. Everyone gives you $1. Happy Birthday;MoneyChange:getFromPlayers:1
 
