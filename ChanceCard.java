@@ -85,8 +85,7 @@ public class ChanceCard
                         }
                         else if (individualValues[k].equals("move"))
                         {
-                            workingCard.setTilesToMove(Integer.parseInt(individualValues[k+1]));
-                            
+                            workingCard.setTilesToMove(Integer.parseInt(individualValues[k+1]));  
                         }
                         
                     }
