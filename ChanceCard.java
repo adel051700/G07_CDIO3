@@ -45,23 +45,16 @@ public class ChanceCard implements field
     {
         return this.tilesToMove;
     }
- 
 
-    public static void main(String[] args)
+    public static ChanceCard[] getChanceCardsFromFile(String filename)
     {
-        var arr = getChanceCardsFromFile("chancecards.csv");
-        System.out.println(arr.get(0).getText());
-    }
-
-    public static ArrayList<ChanceCard> getChanceCardsFromFile(String filename)
-    {
-        ArrayList<ChanceCard> chanceCards = new ArrayList<ChanceCard>();
+        ChanceCard[] chanceCards = new ChanceCard[20];
         
         try
         {
             File fileToRead= new File(filename);
             Scanner Scanner = new Scanner(fileToRead);
-
+            int j = 0;
             while (Scanner.hasNextLine())
             {
                 String parsedLine = Scanner.nextLine();
@@ -90,12 +83,15 @@ public class ChanceCard implements field
                         else if (individualValues[k].equals("NextAction"))
                         {
                             if (individualValues[k+1].equals(""))
+                            {
+                                
+                            }
                         }
                         
                     }
                 }
-                chanceCards.add(workingCard);
-
+                chanceCards[j] = workingCard;
+                j++;
             }
             Scanner.close();
         }
