@@ -39,7 +39,6 @@ class Tile
     int i = 0;
       while (Scanner.hasNextLine())
     {
-      
       String tile = Scanner.nextLine();
       String[] tileValues = tile.split(";");
       String name = tileValues[0];
