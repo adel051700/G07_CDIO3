@@ -9,7 +9,7 @@ class Tile implements field
 
   public String doThing()
   {
-    String returnStatement =  "You landed on " + this.name +" which is a " + this.color + "Tile, \n The tile is owned by: " + this.ownedBy ;
+    String returnStatement =  "You landed on " + this.name +" which is a " + this.color + "Tile, \n The tile is owned by: " + this.ownedBy;
     if (ownedBy == "None")
     {
       returnStatement += "\n You can buy this tile for " + this.tileCost;
