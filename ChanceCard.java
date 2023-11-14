@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
-public class ChanceCard 
+public class ChanceCard implements field
 {   
     public static int amount=Monopoly.getAmountofplayers();
     //We need to add a variable to change amount of all players
