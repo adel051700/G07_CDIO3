@@ -1,13 +1,13 @@
 class Player {
-    private String name;
+    private int number;
     private String tokenCharacter;
     private Bank account;
     public Boolean skipPlayerTurn = false;
     public Boolean isInPrison = false;
     public Boolean isBankrupt = false;
 
-    public Player (String name, String tokenCharacter, int bankBalance) {
-        this.name = name;
+    public Player (int number, String tokenCharacter, int bankBalance) {
+        this.number = number;
         this.tokenCharacter = tokenCharacter;
         this.account = new Bank();
     }
@@ -29,14 +29,14 @@ class Player {
     }
 
     public String toString() {
-        return this.name + " " + this.tokenCharacter + System.lineSeparator() + " Bank balance: " + this.account.getBalance();
+        return "Player " + this.number + " " + this.tokenCharacter + System.lineSeparator() + " Bank balance: " + this.account.getBalance();
     }
 
-    public int getBankBalnce() {
+    public int getBankBalance() {
         return account.getBalance();
     }
 
-    public void setBankbalnce(int alphaChange) 
+    public void setBankBalance(int alphaChange) 
     {
         account.changeBalance(alphaChange);
     }
