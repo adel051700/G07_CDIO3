@@ -5,7 +5,10 @@ class Tile implements field
   private String story;
   private int value;
 
-  
+  public String doThing()
+  {
+    return "You landed on " + this.name + ", \n" + this.story;
+  }
   
   public Tile(String name, String story, int value)
     {
