@@ -2,32 +2,37 @@ import java.io.File;
 class Tile implements field
 {
   private String name;
-  private String story;
-  private int value;
+  private String color;
+  private String ownedBy;
+  private int tileCost;
+
 
   public String doThing()
   {
-    return "You landed on " + this.name + ", \n" + this.story;
-  }
-  
-  public Tile(String name, String story, int value)
+    String returnStatement =  "You landed on " + this.name +" which is a " + this.color + "Tile, \n The tile is owned by: " + this.ownedBy;
+    if (ownedBy == "None")
     {
-        this.name = name;
-        this.story = story;
-        this.value = value;
+      returnStatement += "\n You can buy this tile for " + this.tileCost;
+    }
+    else
+    {
+      returnStatement += "You have to pay " + this.tileCost +  " in rent to  " + this.ownedBy; 
     }
 
-  public int getValue()
-  {
-    return this.value;
+    return returnStatement;
   }
-  public String getName()
+  
+  public Tile(String name, String color ,int tileCost)
+    {
+        this.name = name;
+        this.color = color;
+        this.ownedBy = "None";
+        this.tileCost= tileCost;
+    }
+
+  public void setTileCost(int newValue)
   {
-    return this.name;
-  }
-  public String getStory()
-  {
-    return this.story;
+    this.tileCost = newValue;
   }
 
   public static Tile[] getTilesFromFile(String language)
