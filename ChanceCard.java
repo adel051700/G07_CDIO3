@@ -84,7 +84,7 @@ public class ChanceCard implements field
                         {
                             if (individualValues[k+1].equals(""))
                             {
-                                
+
                             }
                         }
                         
