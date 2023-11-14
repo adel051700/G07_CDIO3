@@ -1,4 +1,4 @@
 public interface field 
 {
-    public void doThing();
+    public String doThing();
 }
