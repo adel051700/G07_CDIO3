@@ -1,5 +1,5 @@
 public class Bank {
-private int balance;
+    private int balance;
 
     public void changeBalance(int deltaBalance) {
         this.balance += deltaBalance;

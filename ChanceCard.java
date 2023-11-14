@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
-public class ChanceCard 
+public class ChanceCard implements field
 {   
     public static int amount=Monopoly.getAmountofplayers();
     //We need to add a variable to change amount of all players
@@ -75,7 +75,7 @@ public class ChanceCard
                         if (individualValues[k].equals("moneyChange"))
                         {
                             if (individualValues[k+1].equals("getFromPlayers")){
-                                workingCard.setMoneyToChange(amount);
+                                workingCard.setMoneyToChange(amount * Integer.parseInt(individualValues[k+2]));
                             }
                             workingCard.setMoneyToChange(Integer.parseInt(individualValues[k+1]));
                         }
@@ -85,8 +85,11 @@ public class ChanceCard
                         }
                         else if (individualValues[k].equals("move"))
                         {
-                            workingCard.setTilesToMove(Integer.parseInt(individualValues[k+1]));
-                            
+                            workingCard.setTilesToMove(Integer.parseInt(individualValues[k+1]));  
+                        }
+                        else if (individualValues[k].equals("NextAction"))
+                        {
+                            if (individualValues[k+1].equals(""))
                         }
                         
                     }
