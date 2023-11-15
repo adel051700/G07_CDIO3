@@ -2,9 +2,9 @@ class Player {
     private int number;
     private String tokenCharacter;
     private Bank account;
-    public Boolean skipPlayerTurn = false;
-    public Boolean isInPrison = false;
-    public Boolean isBankrupt = false;
+    public boolean skipPlayerTurn = false;
+    public boolean isInPrison = false;
+    public boolean isBankrupt = false;
 
     public Player (int number, String tokenCharacter, int bankBalance) {
         this.number = number;
