@@ -61,4 +61,15 @@ class buyableField extends field {
     public void setRent(int multiplier) {
         this.rent = this.rent * multiplier;
     }
+
+    public String getDescription() {
+        String returnStatement = "You landed on " + this.name + " which is a " + this.color
+                + "Tile, \n The tile is owned by: " + this.owner;
+        if (owner == null) {
+            returnStatement += "\n You can buy this tile for " + this.value;
+        } else {
+            returnStatement += "You have to pay " + this.value + " in rent to  " + this.owner;
+        }
+        return returnStatement;
+    }
 }
