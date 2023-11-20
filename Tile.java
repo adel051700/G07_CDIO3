@@ -34,10 +34,6 @@ class Tile implements fields
   {
     this.tileCost = newValue;
   }
-  public void setOwnership (Player owner)
-  {
-
-  }
 
   public static Tile[] getTilesFromFile(String language)
   {
