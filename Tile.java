@@ -1,5 +1,5 @@
 import java.io.File;
-class Tile implements fields
+class Tile implements field
 {
   private String name;
   private String color;
