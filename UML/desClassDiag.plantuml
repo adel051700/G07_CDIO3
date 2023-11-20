@@ -1,0 +1,12 @@
+@startuml
+class Bank {
+    -int balance
+
+    +void changeBalance(int deltaBalance)
+    +int getBalance
+}
+
+
+
+
+@enduml

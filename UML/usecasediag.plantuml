@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+
+rectangle MonopolyJR {
+usecase "Roll die" as uc1
+usecase "Buy tile" as uc2
+usecase "Pay owner" as uc3
+usecase "Go to prison" as uc4
+usecase "Choose character" as uc5
+usecase "Go bankrupt" as uc6
+usecase "Pawn property" as uc7
+usecase "Lose property" as uc8
+usecase "Receive money" as uc9
+usecase "Lose money" as uc10
+usecase "Get chance card" as uc11
+usecase "Move character" as uc12
+usecase "Lose Game" as uc13
+
+
+}
+
+actor Player as pl
+actor Bank as bk
+actor Game as gm
+
+pl -- uc1
+pl -- uc2
+pl -- uc3
+pl -- uc4
+pl -- uc5
+pl -- uc6
+pl -- uc7
+pl -- uc8
+pl -- uc9
+pl -- uc10
+pl -- uc11
+pl -- uc12
+uc5 -- gm
+uc9 -- bk
+uc10 -- bk
+uc11 -- gm
+uc6 -- bk
+uc6 .> uc13 : includes
+
+
+
+@enduml

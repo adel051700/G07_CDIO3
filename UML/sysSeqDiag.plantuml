@@ -1,0 +1,21 @@
+@startuml
+
+hide footbox
+group MoveCharacter 
+
+    actor ":Player" as pl
+    participant ":System" as sy
+    
+
+    activate pl
+    pl -> sy : Rolls dice
+    deactivate pl
+    activate sy
+    sy -> sy: Sends sum of dice
+    sy --> pl : Returns player position
+    deactivate sy
+end
+
+
+
+@enduml
