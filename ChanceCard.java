@@ -1,24 +1,21 @@
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
-public class ChanceCard implements fields
+
+public class ChanceCard
 {   
-    private String name = "";
-    private String text = "";
+    private String text;
+    private String name;
     private int tilesToMove = 0;
     private int MoneyToChange = 0;
+    
     ChanceCard(String name)
     {
-        this.name=name;
+        this.name = name;
     }
     public String getName()
     {
         return this.name;
-    }
-
-    public String getDescription()
-    {
-
     }
 
     private void setMoneyToChange(int changeBalance)
@@ -63,34 +60,17 @@ public class ChanceCard implements fields
                 String parsedLine = Scanner.nextLine();
                 String[] chanceCard = parsedLine.split(";");
                 ChanceCard workingCard = new ChanceCard(chanceCard[0]);
-                for (int i = 1; i < chanceCard.length;i++)
+                workingCard.setText(chanceCard[1]);
+                for (int i = 2; i < chanceCard.length;i++)
                 {
                     String[] individualValues = chanceCard[i].split(":");
                     for (int k = 0; k < individualValues.length; k++)
                     {
-                        if (individualValues[k].equals("moneyChange"))
+                        // Get Next Action
+                        if(individualValues[0] == "NextAction") 
                         {
-                            if (individualValues[k+1].equals("getFromPlayers")){
-                                workingCard.setMoneyToChange(amount * Integer.parseInt(individualValues[k+2]));
-                            }
-                            workingCard.setMoneyToChange(Integer.parseInt(individualValues[k+1]));
+                            
                         }
-                        else if (individualValues[k].equals("text"))
-                        {
-                            workingCard.setText(individualValues[k+1]);
-                        }
-                        else if (individualValues[k].equals("move"))
-                        {
-                            workingCard.setTilesToMove(Integer.parseInt(individualValues[k+1]));  
-                        }
-                        else if (individualValues[k].equals("NextAction"))
-                        {
-                            if (individualValues[k+1].equals(""))
-                            {
-
-                            }
-                        }
-                        
                     }
                 }
                 chanceCards[j] = workingCard;

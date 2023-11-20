@@ -6,12 +6,12 @@ Free space;text:Advance to an orange or green space. If one is available get it 
 Free space;text:Advance to an orange space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveTo:moveTo:orange
 Free space;text:Advance to a red space. If one is available get it for free, Otherwise pay rent to the owner.;NextAction:moveTo:red
 Free space;text:Advance to a light blue space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveTo:light blue
-Skatepark; Advance to the Skatepark. If no one owns it, get it for free, otherwise pay rent to the owner.; NextAction:moveTo:Skatepark
+Skatepark;Advance to the Skatepark. If no one owns it, get it for free, otherwise pay rent to the owner.;NextAction:moveTo:Skatepark
 Boardwalk;Advance to Boardwalk. If no one owns it, get it for free, otherwise pay rent to the owner.;NextAction:moveTo:Boardwalk
 Homework;You've made all your homework. Collect $2 from the bank;MoneyChange:2
-Birthday; It's your birthday. Everyone gives you $1. Happy Birthday;MoneyChange:getFromPlayers
+Birthday;It's your birthday. Everyone gives you $1. Happy Birthday;MoneyChange:getFromPlayers
 Candy;You ate too much candy pay $2 to the bank;MoneyChange:-2
-Go; Advance to Go, collect $2;NextAction:moveTo:Go;
+Go;Advance to Go, collect $2;NextAction:moveTo:Go;
 Move1;Move forward one space;NextAction:moveforward:1
 Move2;Move forward up to 5 spaces.;NextAction:moveToInput
 Jailfree;You got a 'get out of jail free' card!;NextAction:Jailfreevar:1
