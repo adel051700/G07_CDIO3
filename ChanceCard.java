@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
-public class ChanceCard implements field
+public class ChanceCard implements fields
 {   
     private String name = "";
     private String text = "";
@@ -14,6 +14,11 @@ public class ChanceCard implements field
     public String getName()
     {
         return this.name;
+    }
+
+    public String getDescription()
+    {
+
     }
 
     private void setMoneyToChange(int changeBalance)

@@ -1,5 +1,5 @@
 import java.io.File;
-class Tile implements field
+class Tile implements fields
 {
   private String name;
   private String color;
@@ -7,7 +7,7 @@ class Tile implements field
   private int tileCost;
 
 
-  public String doThing()
+  public String getDescription()
   {
     String returnStatement =  "You landed on " + this.name +" which is a " + this.color + "Tile, \n The tile is owned by: " + this.ownedBy;
     if (ownedBy == "None")
@@ -33,6 +33,10 @@ class Tile implements field
   public void setTileCost(int newValue)
   {
     this.tileCost = newValue;
+  }
+  public void setOwnership (Player owner)
+  {
+
   }
 
   public static Tile[] getTilesFromFile(String language)
