@@ -31,7 +31,6 @@ class Monopoly {
         for (int i = 0; i < players.length; i++)
         {
             players[i] = new Player(i+1,(24-(n*2)));
-            System.out.println(players[i].getBankBalance());
         }
 
         }
