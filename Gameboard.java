@@ -14,7 +14,7 @@ class Gameboard
     // with all tiles
 
     int numberOfTiles = 24;
-    Object[]fieldArr = new Tile[numberOfTiles];
+    Object[]fieldArr = new Object[numberOfTiles];
     try
     {
     var fileToRead = new File(language + ".csv");
