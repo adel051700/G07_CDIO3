@@ -6,6 +6,7 @@ public class ChanceCard
 {   
     private String text;
     private String name;
+    private String color = "";
     private int tilesToMove = 0;
     private int MoneyToChange = 0;
     
@@ -67,9 +68,27 @@ public class ChanceCard
                     for (int k = 0; k < individualValues.length; k++)
                     {
                         // Get Next Action
-                        if(individualValues[0] == "NextAction") 
+                        if(individualValues[0] == "NextAction")
                         {
-                            
+                            if (individualValues[1] == "movetoColor")
+                            {
+
+                            }
+                            if (individualValues[1] == "moveToTile")
+                            {
+
+                            }
+                            if (individualValues[1] == "moveForward")
+                            {
+                                this.tilesToMove = individualValues[2];
+                            }
+                        }
+                        if(individualValues[0] == "MoneyChange") 
+                        {
+                            if(individualValues[1] == "getFromPlayer")
+                            {
+
+                            }
                         }
                     }
                 }
