@@ -12,6 +12,11 @@ class Player {
         this.account.changeBalance(bankBalance);
     }
 
+    public int getNumber()
+    {
+        return this.number;
+    }
+
     public Boolean getSkipPlayerTurn() {
         return skipPlayerTurn;
     }
@@ -39,17 +44,5 @@ class Player {
     public void setBankBalance(int alphaChange) 
     {
         account.changeBalance(alphaChange);
-    }
-
-    public Boolean getIsBankrupt() {
-        if (account.getBalance() == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        
     }
 }
