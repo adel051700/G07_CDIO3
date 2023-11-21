@@ -94,9 +94,9 @@ class buyableField extends field {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color
                 + "Tile, \n The tile is owned by: " + this.owner;
         if (owner == null) {
-            returnStatement += "\n You can buy this tile for " + this.value;
+            returnStatement += "\n You buy this tile for " + this.value + " and your turn has now ended...";
         } else {
-            returnStatement += "You have to pay " + this.value + " in rent to  " + this.owner;
+            returnStatement += "You pay " + this.value + " in rent to  " + this.owner + ". Your turn has now ended...";
         }
         return returnStatement;
     }
