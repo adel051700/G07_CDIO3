@@ -14,7 +14,7 @@ class Gameboard
     // with all tiles
 
     int numberOfTiles = 24;
-    Object[]fieldArr = new Tile[numberOfTiles];
+    Object[]fieldArr = new Object[numberOfTiles];
     try
     {
     var fileToRead = new File(language + ".csv");
@@ -36,7 +36,8 @@ class Gameboard
       } else if (color == "purple") {
         fieldArr[i] = new field(name);
       } else {
-        fieldArr[i] = new buyableField(name, value, color, value, fieldValues);
+        int rent = value;
+        fieldArr[i] = new buyableField(name, value, color, rent, null);
       }
       i++;
     }
