@@ -75,7 +75,7 @@ public class ChanceCard
                         {
                             if(individualValues[1] == "moveToTile")
                             {
-                                this.tileName = individualValues[2];
+                                workingCard.tileName = individualValues[2];
                             }
                             if(individualValues[1] == "moveToColor")
                             {
@@ -83,11 +83,11 @@ public class ChanceCard
                             }
                             if(individualValues[1] == "moveForward")
                             {
-                                this.tilesToMove = Integer.parseInt(individualValues[2]);
+                                workingCard.tilesToMove = Integer.parseInt(individualValues[2]);
                             }
-                            if(individualValues[1] == "moveToValue")
+                            if(individualValues[1] == "moveToInput")
                             {
-                                
+                                workingCard.tilesToMove = Integer.parseInt(individualValues[2]);
                             }
                             if(individualValues[1] == "DrawChance")
                             {
@@ -103,7 +103,7 @@ public class ChanceCard
                         {
                             if(individualValues[1] == "getFromPlayers")
                             {
-
+                                workingCard.moneyToChange = Integer.parseInt(individualValues[3]);
                             }
                         }
                     }
