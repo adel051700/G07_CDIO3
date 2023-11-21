@@ -1,16 +1,24 @@
+Start;black;0
 Food Truck;brown;1
 Pizza Parlor;brown;1
+ChanceCard;pink;0
 Donut Shop;light blue;1
 Ice Cream shop;light blue;1
+Jailvisit;purple;0
 Museum;pink;2
 Library;pink;2
+ChanceCard;pink;0
 The Park;orange;2
-The Beach;orange;2  
+The Beach;orange;2
+Free Parking;purple;0  
 The Postoffice;red;3
 Train Station;red;3
+ChanceCard;pink;0
 Community Garden;yellow;3
 Pet Rescue;yellow;3
+Go too jail;stripes;0
 Aquarium;green;4
 The Zoo;green;4
+ChanceCard;pink;0
 Water park;dark blue;5
 Amusment Park;dark blue;5
