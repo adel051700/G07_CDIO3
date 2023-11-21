@@ -9,6 +9,7 @@ class Player {
     public Player (int number, int bankBalance) {
         this.number = number;
         this.account = new Bank();
+        this.account.changeBalance(bankBalance);
     }
 
     public Boolean getSkipPlayerTurn() {
