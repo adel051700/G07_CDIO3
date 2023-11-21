@@ -70,6 +70,7 @@ public class ChanceCard
                         // Get Next Action
                         if(individualValues[0] == "NextAction")
                         {
+<<<<<<< HEAD
                             if (individualValues[1] == "movetoColor")
                             {
 
@@ -86,6 +87,36 @@ public class ChanceCard
                         if(individualValues[0] == "MoneyChange") 
                         {
                             if(individualValues[1] == "getFromPlayer")
+                            {
+
+                            }
+=======
+                            if(individualValues[1] == "moveTo")
+                            {
+
+                            }
+                            if(individualValues[1] == "moveForward")
+                            {
+
+                            }
+                            if(individualValues[1] == "moveToValue")
+                            {
+                                
+                            }
+                            if(individualValues[1] == "DrawChance")
+                            {
+
+                            }
+                            if(individualValues[1] == "Jailfreevar")
+                            {
+                                
+                            }
+                            
+>>>>>>> ea3fdb974c2ef77e6b024855e78e07c9bff3c27e
+                        }
+                        if(individualValues[0] == "MoneyChange")
+                        {
+                            if(individualValues[1] == "getFromPlayers")
                             {
 
                             }
