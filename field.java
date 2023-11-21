@@ -89,7 +89,7 @@ class buyableField extends field {
     public void setRent(int multiplier) {
         this.rent = this.rent * multiplier;
     }
-
+    @Override
     public String getDescription() {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color
                 + "Tile, \n The tile is owned by: " + this.owner;
