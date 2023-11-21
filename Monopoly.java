@@ -52,6 +52,7 @@ class Monopoly {
             }
         }
         String[] leaderboard = new String[n];
+        int[] playerValue = new int[n];
         int[] checkedPlayers = new int[n];
         int maxValue = 0;
         int playerNumber = 0;
