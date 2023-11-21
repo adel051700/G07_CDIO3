@@ -7,8 +7,9 @@ public class ChanceCard
     private String text;
     private String name;
     private String[] color;
+    private String tileName;
     private int tilesToMove = 0;
-    private int MoneyToChange = 0;
+    private int moneyToChange = 0;
     
     ChanceCard(String name)
     {
@@ -21,11 +22,11 @@ public class ChanceCard
 
     private void setMoneyToChange(int changeBalance)
     {
-        this.MoneyToChange = changeBalance;
+        this.moneyToChange = changeBalance;
     }
     public int getMoneyToChange()
     {
-        return this.MoneyToChange;
+        return this.moneyToChange;
     }
 
     private void setText(String text)
@@ -61,7 +62,9 @@ public class ChanceCard
                 String parsedLine = Scanner.nextLine();
                 String[] chanceCard = parsedLine.split(";");
                 ChanceCard workingCard = new ChanceCard(chanceCard[0]);
+
                 workingCard.setText(chanceCard[1]);
+
                 for (int i = 2; i < chanceCard.length;i++)
                 {
                     String[] individualValues = chanceCard[i].split(":");
@@ -70,9 +73,9 @@ public class ChanceCard
                         // Get Next Action
                         if(individualValues[0] == "NextAction")
                         {
-                            if(individualValues[1] == "moveTo")
+                            if(individualValues[1] == "moveToTile")
                             {
-                                
+                                this.tileName = individualValues[2];
                             }
                             if(individualValues[1] == "moveToColor")
                             {
@@ -80,7 +83,7 @@ public class ChanceCard
                             }
                             if(individualValues[1] == "moveForward")
                             {
-
+                                this.tilesToMove = Integer.parseInt(individualValues[2]);
                             }
                             if(individualValues[1] == "moveToValue")
                             {
