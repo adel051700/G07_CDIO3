@@ -81,7 +81,22 @@ public class ChanceCard
                             {
                                 
                             }
+                            if(individualValues[1] == "DrawChance")
+                            {
+
+                            }
+                            if(individualValues[1] == "Jailfreevar")
+                            {
+                                
+                            }
                             
+                        }
+                        if(individualValues[0] == "MoneyChange")
+                        {
+                            if(individualValues[1] == "getFromPlayers")
+                            {
+
+                            }
                         }
                     }
                 }
