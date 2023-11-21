@@ -47,7 +47,7 @@ public class ChanceCard
         return this.tilesToMove;
     }
 
-    public ChanceCard[] getChanceCardsFromFile(String filename)
+    public static ChanceCard[] getChanceCardsFromFile(String filename)
     {
         ChanceCard[] chanceCards = new ChanceCard[20];
         
@@ -76,7 +76,7 @@ public class ChanceCard
                             }
                             if(individualValues[1] == "moveToColor")
                             {
-                                this.color = individualValues[2].split(",");
+                                workingCard.color = individualValues[2].split(",");
                             }
                             if(individualValues[1] == "moveForward")
                             {
