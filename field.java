@@ -45,6 +45,7 @@ class chanceField extends field {
     }
     @Override
     public String getDescription(){
+        ChanceCard[] chanceCards = ChanceCard.getChanceCardsFromFile("chancecard.csv");
         var s = new Scanner(System.in);
         int chanceCardNum = drawChanceCard();
         System.out.println("You have landed on a chancefield. Press a button to draw a chancecard!");
