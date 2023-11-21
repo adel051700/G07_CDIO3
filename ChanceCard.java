@@ -69,6 +69,18 @@ public class ChanceCard
                         // Get Next Action
                         if(individualValues[0] == "NextAction") 
                         {
+                            if(individualValues[1] == "moveTo")
+                            {
+
+                            }
+                            if(individualValues[1] == "moveForward")
+                            {
+
+                            }
+                            if(individualValues[1] == "moveToValue")
+                            {
+                                
+                            }
                             
                         }
                     }
