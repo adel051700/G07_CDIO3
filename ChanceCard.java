@@ -70,30 +70,13 @@ public class ChanceCard
                         // Get Next Action
                         if(individualValues[0] == "NextAction")
                         {
-<<<<<<< HEAD
-                            if (individualValues[1] == "movetoColor")
-                            {
-
-                            }
-                            if (individualValues[1] == "moveToTile")
-                            {
-
-                            }
-                            if (individualValues[1] == "moveForward")
-                            {
-                                this.tilesToMove = individualValues[2];
-                            }
-                        }
-                        if(individualValues[0] == "MoneyChange") 
-                        {
-                            if(individualValues[1] == "getFromPlayer")
-                            {
-
-                            }
-=======
                             if(individualValues[1] == "moveTo")
                             {
-
+                                
+                            }
+                            if(individualValues[1] == "moveToColor")
+                            {
+                                
                             }
                             if(individualValues[1] == "moveForward")
                             {
@@ -112,7 +95,6 @@ public class ChanceCard
                                 
                             }
                             
->>>>>>> ea3fdb974c2ef77e6b024855e78e07c9bff3c27e
                         }
                         if(individualValues[0] == "MoneyChange")
                         {
