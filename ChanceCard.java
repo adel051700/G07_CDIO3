@@ -6,7 +6,7 @@ public class ChanceCard
 {   
     private String text;
     private String name;
-    //private String color = "";
+    private String[] color;
     private int tilesToMove = 0;
     private int MoneyToChange = 0;
     
@@ -47,7 +47,7 @@ public class ChanceCard
         return this.tilesToMove;
     }
 
-    public static ChanceCard[] getChanceCardsFromFile(String filename)
+    public ChanceCard[] getChanceCardsFromFile(String filename)
     {
         ChanceCard[] chanceCards = new ChanceCard[20];
         
@@ -76,39 +76,7 @@ public class ChanceCard
                             }
                             if(individualValues[1] == "moveToColor")
                             {
-                                String[] color = individualValues[2].split(",");
-                                if(color == "red")
-                                {
-
-                                }
-                                if(color == "light blue")
-                                {
-
-                                }
-                                if(color == "dark blue")
-                                {
-
-                                }
-                                if(color == "pink")
-                                {
-
-                                }
-                                if(color == "brown")
-                                {
-
-                                }
-                                if(color == "orange")
-                                {
-
-                                }
-                                if(color == "yellow")
-                                {
-
-                                }
-                                if(color == "green")
-                                {
-                                    
-                                }
+                                this.color = individualValues[2].split(",");
                             }
                             if(individualValues[1] == "moveForward")
                             {
