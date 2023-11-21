@@ -6,7 +6,7 @@ class Monopoly {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int whoseTurn = 1;
+        int whoseTurn = 0;
         Dice dice1 = new Dice(6);
         Dice dice2 = new Dice(6);
         Tile[] tiles = Tile.getTilesFromFile(Tiles.java);
