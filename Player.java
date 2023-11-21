@@ -1,14 +1,13 @@
 class Player {
     private int number;
-    private String tokenCharacter;
+    private String tokenCharacter = "";
     private Bank account;
     public boolean skipPlayerTurn = false;
     public boolean isInPrison = false;
     public boolean isBankrupt = false;
 
-    public Player (int number, String tokenCharacter, int bankBalance) {
+    public Player (int number, int bankBalance) {
         this.number = number;
-        this.tokenCharacter = tokenCharacter;
         this.account = new Bank();
     }
 
