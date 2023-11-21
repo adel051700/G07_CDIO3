@@ -3,12 +3,12 @@ import java.io.File;
 class Gameboard
 {
     private Object[] gameBoard;
-    public Gameboard(Object[] gameBoard)
+    public Gameboard()
     { 
-        this.gameBoard = gameBoard;
+        this.gameBoard = getTilesFromFile("tiles");
     }
 
-    public static Object[] getTilesFromFile(String language)
+    public static Object[] getTilesFromFile(String fileName)
   {
     //Create Tiles from csv file of the chosen language, and create array of type Tile
     // with all tiles
@@ -17,7 +17,7 @@ class Gameboard
     Object[]fieldArr = new Object[numberOfTiles];
     try
     {
-    var fileToRead = new File(language + ".csv");
+    var fileToRead = new File(fileName + ".csv");
     var Scanner = new java.util.Scanner(fileToRead);
     int i = 0;
       while (Scanner.hasNextLine())
