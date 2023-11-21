@@ -1,10 +1,16 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class field {
     public String name;
 
     public field(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        String returnStatement = "You have landed on " + this.name + "Nothing further happens...";
+        return returnStatement;
     }
 }
 
@@ -15,6 +21,13 @@ class specialField extends field {
         super(name);
         this.changeBalance = changeBalance;
 
+    }
+
+    @Override
+    public String getDescription() {
+        String returnStatement = "You have landed on " + this.name + ". " + changeBalance
+                + " has been added to your account!";
+        return returnStatement;
     }
 
 }
@@ -30,6 +43,15 @@ class chanceField extends field {
         int cardNumber = random.nextInt((19 - 0) + 1) + 0;
         return cardNumber;
     }
+    @Override
+    public String getDescription(){
+        var s = new Scanner(System.in);
+        int chanceCardNum = drawChanceCard();
+        System.out.println("You have landed on a chancefield. Press a button to draw a chancecard!");
+        s.nextLine();
+        String returnStatement = "The chancecard reads: " + chanceCards[chanceCardNum].getText();
+        return returnStatement;
+    }
 }
 
 class prisonField extends field {
@@ -37,6 +59,12 @@ class prisonField extends field {
 
     public prisonField(String name) {
         super(name);
+    }
+
+    @Override
+    public String getDescription(){
+        String returnStatement = "You have landed on Go to Prison! " + "You have now been transfered to the prison and the turn is passed on...";
+        return returnStatement;
     }
 }
 
