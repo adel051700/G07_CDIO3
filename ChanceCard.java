@@ -76,7 +76,7 @@ public class ChanceCard
                             }
                             if(individualValues[1] == "moveToColor")
                             {
-                                
+                                String[] color = individualValues[2].split(",");
                             }
                             if(individualValues[1] == "moveForward")
                             {
