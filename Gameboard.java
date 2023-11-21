@@ -36,7 +36,8 @@ class Gameboard
       } else if (color == "purple") {
         fieldArr[i] = new field(name);
       } else {
-        fieldArr[i] = new buyableField(name, value, color, value, fieldValues);
+        int rent = Integer.parseInt(fieldValues[3]);
+        fieldArr[i] = new buyableField(name, value, color, rent, null);
       }
       i++;
     }
