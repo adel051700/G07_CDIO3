@@ -9,6 +9,7 @@ public class ChanceCard
     private String tileName;
     private int tilesToMove = 0;
     private int moneyToChange = 0;
+    private int jailFreeCards = 0;
     private boolean drawChance = false;
 
     public static void main(String[] args) {
@@ -19,7 +20,10 @@ public class ChanceCard
             System.out.println("Text: " + card.getText());
             System.out.println("Tiles to move: " + card.getTilesToMove());
             System.out.println("Money to change: " + card.getMoneyToChange());
-            System.out.println("Drawchance: " + card.getDrawChance());
+            System.out.println("Amount of jail free cards: " + card.getJailFreeCards());
+            System.out.println("\n");
+            System.out.println("------------------------------------------------------------------------------------");
+            System.out.println("\n");
         }
 
     }
@@ -65,19 +69,14 @@ public class ChanceCard
         return this.tilesToMove;
     }
 
-    private void setDrawChance(boolean drawChance)
+    public int getJailFreeCards()
     {
-        this.drawChance = drawChance;
-    }
-
-    public boolean getDrawChance()
-    {
-        return this.drawChance;
+        return this.jailFreeCards;
     }
 
     public static ChanceCard[] getChanceCardsFromFile(String filename)
     {
-        ChanceCard[] chanceCards = new ChanceCard[20];
+        ChanceCard[] chanceCards = new ChanceCard[16];
         
         try
         {
@@ -116,28 +115,9 @@ public class ChanceCard
                             {
                                 workingCard.tilesToMove = Integer.parseInt(individualValues[2]);
                             }
-                            if(individualValues[1] == "DrawChanceCar")
-                            {
-                                workingCard.drawChance = true;
-
-                            }
-                            if(individualValues[1] == "DrawChanceCat")
-                            {
-                                workingCard.drawChance = true;
-
-                            }
-                            if(individualValues[1] == "DrawChanceDog")
-                            {
-                                workingCard.drawChance = true;
-                            }
-                            if(individualValues[1] == "DrawChanceBoat")
-                            {
-                                workingCard.drawChance = true;
-                                
-                            }
                             if(individualValues[1] == "Jailfreevar")
                             {
-                                
+                                workingCard.jailFreeCards += 1;
                             }
                             
                         }
