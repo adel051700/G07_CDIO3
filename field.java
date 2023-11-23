@@ -93,7 +93,7 @@ class buyableField extends field {
     @Override
     public String getDescription() {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color
-                + "Tile, \n The tile is owned by: " + this.owner;
+                + " tile, \n The tile is owned by: " + this.owner;
         if (owner == null) {
             returnStatement += "\n You buy this tile for " + this.value + " and your turn has now ended...";
         } else {

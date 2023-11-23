@@ -7,10 +7,11 @@ class Monopoly {
     public static void main(String[] args) {
         System.out.println("Welcome to Monopoly Jr.! How many players are you? Press 2, 3 or 4");
         Scanner s = new Scanner(System.in);
+        var gameBoard = Gameboard.getTilesFromFile("tiles");
+        System.out.println(gameBoard[1].getDescription());
         while (true)
         {
 
-        
         Dice dice1 = new Dice(6);
         Dice dice2 = new Dice(6);
 
@@ -127,6 +128,7 @@ class Monopoly {
             s.next();
             continue;
         }
+        s.close();
         break;
         }
         

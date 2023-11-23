@@ -2,19 +2,19 @@ import java.io.File;
 
 class Gameboard
 {
-    private Object[] gameBoard;
+    public Object[] gameBoard;
     public Gameboard()
-    { 
+    {
         this.gameBoard = getTilesFromFile("tiles");
     }
 
-    public static Object[] getTilesFromFile(String fileName)
+    public static field[] getTilesFromFile(String fileName)
   {
     //Create Tiles from csv file of the chosen language, and create array of type Tile
     // with all tiles
 
     int numberOfTiles = 24;
-    Object[]fieldArr = new Object[numberOfTiles];
+    field[]fieldArr = new field[numberOfTiles];
     try
     {
     var fileToRead = new File(fileName + ".csv");
@@ -27,6 +27,7 @@ class Gameboard
       String name = fieldValues[0];
       String color = fieldValues[1];
       int value = Integer.parseInt(fieldValues[2]);
+      int rent = 0;
       if (color == "black") {
         fieldArr[i] = new specialField(name, value);
       } else if (color == "pink") {
@@ -36,7 +37,7 @@ class Gameboard
       } else if (color == "purple") {
         fieldArr[i] = new field(name);
       } else {
-        int rent = value;
+        rent = value;
         fieldArr[i] = new buyableField(name, value, color, rent, null);
       }
       i++;
