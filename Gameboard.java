@@ -1,9 +1,8 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 
 class Gameboard
 {
-    public Object[] gameBoard;
+    private Object[] gameBoard;
     public Gameboard()
     {
         this.gameBoard = getTilesFromFile("tiles");
@@ -30,7 +29,7 @@ class Gameboard
       int value = Integer.parseInt(fieldValues[2]);
       int rent = 0;
       if (color == "black") {
-        fieldArr[i] = new specialField(name, value);
+        fieldArr[i] = new field(name);
       } else if (color == "pink") {
         fieldArr[i] = new chanceField(name);
       } else if (color == "stripes") {

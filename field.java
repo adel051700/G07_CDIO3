@@ -15,18 +15,15 @@ public class field {
 }
 
 class specialField extends field {
-    private int changeBalance;
 
-    public specialField(String name, int changeBalance) {
+    public specialField(String name) {
         super(name);
-        this.changeBalance = changeBalance;
 
     }
 
     @Override
     public String getDescription() {
-        String returnStatement = "You have landed on " + this.name + ". " + changeBalance
-                + " has been added to your account!";
+        String returnStatement = "You have landed on " + this.name + "!";
         return returnStatement;
     }
 
