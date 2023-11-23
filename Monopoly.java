@@ -53,7 +53,7 @@ class Monopoly {
                 activePlayer.setPosition(activePlayer.getPosition() + die1 + die2);
                 System.out.println(activePlayer.getPosition());
                 
-                System.out.println(gameBoard[activePlayer.getPosition()]);
+                System.out.println(gameBoard[0]);
                 System.out.println(gameBoard[0].getDescription());
                 
                 if (die1 != die2)

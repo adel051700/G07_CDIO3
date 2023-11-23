@@ -28,13 +28,13 @@ class Gameboard
       String color = fieldValues[1];
       int value = Integer.parseInt(fieldValues[2]);
       int rent = 0;
-      if (color == "black") {
+      if (color.equals("black")) {
         fieldArr[i] = new specialField(name);
-      } else if (color == "pink") {
+      } else if (color.equals("pink")) {
         fieldArr[i] = new chanceField(name);
-      } else if (color == "stripes") {
+      } else if (color.equals("stripes")) {
         fieldArr[i] = new prisonField(name);
-      } else if (color == "purple") {
+      } else if (color.equals("purple")) {
         fieldArr[i] = new field(name);
       } else {
         rent = value;
