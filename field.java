@@ -9,7 +9,7 @@ public class field {
     }
 
     public String getDescription() {
-        String returnStatement = "You have landed on " + this.name + "Nothing further happens...";
+        String returnStatement = "You have landed on " + this.name + ", nothing further happens...";
         return returnStatement;
     }
 }
@@ -92,7 +92,7 @@ class buyableField extends field {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color
                 + " tile, \n The tile is owned by: " + this.owner;
         if (owner == null) {
-            returnStatement += "\n You buy this tile for " + this.value + " and your turn has now ended...";
+            returnStatement += "\n You buy this tile for " + this.value;
         } else {
             returnStatement += "You pay " + this.value + " in rent to  " + this.owner + ".";
         }

@@ -43,7 +43,10 @@ class Monopoly {
             boolean loseCondition = false;
             while (!loseCondition)
             {
+                
                 playerTurn %= n;
+                System.out.println("It is player number " +(playerTurn+1)+" turn, press a enter to roll the dice:");
+                s.nextLine();
                 activePlayer = players[playerTurn];
                 
                 die1 = dice.roll();
@@ -52,6 +55,7 @@ class Monopoly {
                 System.out.println(die1 + " " + die2);
                 activePlayer.setPosition(activePlayer.getPosition() + die1 + die2);
                 System.out.println(gameBoard[activePlayer.getPosition()].getDescription());
+                
                 
                 if (die1 != die2)
                 {
