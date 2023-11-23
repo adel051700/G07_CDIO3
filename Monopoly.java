@@ -78,6 +78,16 @@ class Monopoly {
                         loseCondition = true;
                     }
                 }
+                for (int j = 0; j < gameBoard.length-1; j++)
+                {
+                    if (gameBoard[j].getOwner()!=null && gameBoard[j+1].getOwner() != null)
+                    {
+                        if (gameBoard[j].getOwner().equals(gameBoard[j+1].getOwner()))
+                        {
+                            gameBoard[j].setRent(2);
+                        }
+                    }
+                }
             }
 
 

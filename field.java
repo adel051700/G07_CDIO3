@@ -3,10 +3,18 @@ import java.util.Scanner;
 
 public class field {
     public String name;
+    private Player owner = null;
 
     public field(String name) {
         this.name = name;
     }
+    public Player getOwner()
+    {
+        return this.owner;
+    }
+    public void setRent(int fillerFunctionForFunctionalityInBuyableFields)
+    {}
+
 
     public String getDescription(Player player) {
         String returnStatement = "You have landed on " + this.name + ", nothing further happens...";
@@ -82,15 +90,16 @@ class buyableField extends field {
         this.rent = rent;
         this.owner = owner;
     }
-
-    public int getRent() {
-        return this.rent;
+    @Override
+    public Player getOwner()
+    {
+        return this.owner;
     }
 
     public void setRent(int multiplier) {
         this.rent = this.rent * multiplier;
     }
-    //@Override
+    @Override
     public String getDescription(Player player) {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color + " tile";
         if (owner != null)
