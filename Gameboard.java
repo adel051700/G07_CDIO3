@@ -29,7 +29,7 @@ class Gameboard
       int value = Integer.parseInt(fieldValues[2]);
       int rent = 0;
       if (color == "black") {
-        fieldArr[i] = new field(name);
+        fieldArr[i] = new specialField(name);
       } else if (color == "pink") {
         fieldArr[i] = new chanceField(name);
       } else if (color == "stripes") {

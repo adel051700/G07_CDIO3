@@ -55,7 +55,7 @@ class Monopoly {
                 
                 System.out.println(gameBoard[activePlayer.getPosition()]);
                 System.out.println(gameBoard[0].getDescription());
-
+                
                 if (die1 != die2)
                 {
                     playerTurn++;

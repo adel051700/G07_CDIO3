@@ -94,7 +94,7 @@ class buyableField extends field {
         if (owner == null) {
             returnStatement += "\n You buy this tile for " + this.value + " and your turn has now ended...";
         } else {
-            returnStatement += "You pay " + this.value + " in rent to  " + this.owner + ". Your turn has now ended...";
+            returnStatement += "You pay " + this.value + " in rent to  " + this.owner + ".";
         }
         return returnStatement;
     }
