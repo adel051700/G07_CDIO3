@@ -5,11 +5,13 @@ class Player {
     public boolean skipPlayerTurn = false;
     public boolean isInPrison = false;
     public boolean isBankrupt = false;
+    private int position;
 
     public Player (int number, int bankBalance) {
         this.number = number;
         this.account = new Bank();
         this.account.changeBalance(bankBalance);
+        this.position = 0;
     }
 
     public int getNumber()
@@ -44,5 +46,13 @@ class Player {
     public void setBankBalance(int alphaChange) 
     {
         account.changeBalance(alphaChange);
+    }
+    public void setPosition(int tileNumber)
+    {
+        this.position = tileNumber;
+    }
+    public int getPosition()
+    {
+        return this.position;
     }
 }

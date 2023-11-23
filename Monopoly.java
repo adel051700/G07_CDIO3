@@ -8,9 +8,9 @@ class Monopoly {
         System.out.println("Welcome to Monopoly Jr.! How many players are you? Press 2, 3 or 4");
         Scanner s = new Scanner(System.in);
         var gameBoard = Gameboard.getTilesFromFile("tiles");
-        System.out.println(gameBoard[0].getDescription());
-        Dice dice1 = new Dice(6);
-        Dice dice2 = new Dice(6);
+        Dice dice = new Dice(6);
+        int die1;
+        int die2;
         while (true)
         {
             try
@@ -36,17 +36,29 @@ class Monopoly {
             for (int i = 0; i < players.length; i++)
             {
                 players[i] = new Player(i+1,(24-(n*2)));
-            }   
-
-            for (int i = 0; i < players.length+1; i++)
+            }
+            // Main game loop:
+            int playerTurn = 0;
+            boolean loseCondition = false;
+            while (!loseCondition)
             {
-                i %= n;
+
+                playerTurn %= n;
+                System.out.println(playerTurn);
+                die1 = dice.roll();
+                die2 = dice.roll();
+
+                if (die1 != die2)
+                {
+                    playerTurn++;
+                }
+                System.out.println(die1 + " " + die2);
                 for (int k = 0; k < players.length; k++)
                 {
-                    if (players[k].getBankBalance() >= 0)
+                    if (players[k].getBankBalance() <= 0)
                     {
-                        //Sets i value to 6 to break the outer for loop, and calculate the winner(s) 
-                        i = 6;
+                        // Breaks to calculate the winner(s);
+                        loseCondition = true;
                     }
                 }
             }
