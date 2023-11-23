@@ -53,7 +53,7 @@ public class ChanceCard
         
         try
         {
-            File fileToRead= new File(filename);
+            File fileToRead = new File(filename);
             Scanner Scanner = new Scanner(fileToRead);
             int j = 0;
             while (Scanner.hasNextLine())
