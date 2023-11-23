@@ -54,6 +54,7 @@ class Player {
         if (this.position >= 24)
         {
             System.out.println("You passed Start and recieve 2");
+            this.setBankBalance(2);
             this.position %= 24;
         }
     }

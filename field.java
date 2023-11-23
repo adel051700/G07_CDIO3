@@ -47,6 +47,10 @@ class chanceField extends field {
         System.out.println("You have landed on a chancefield. Press a button to draw a chancecard!");
         s.nextLine();
         String returnStatement = "The chancecard reads: " + chanceCards[chanceCardNum].getText();
+
+
+
+        returnStatement += "\n You now have " + player.getBankBalance() + " left";
         return returnStatement;
     }
 }
@@ -92,7 +96,7 @@ class buyableField extends field {
         if (owner != null)
         {
             returnStatement+= "\n The tile is owned by: player number " + this.owner.getNumber();
-            returnStatement += "\n You pay " + this.value + " in rent to: player number" + this.owner.getNumber() + ".";
+            returnStatement += "\n You pay " + this.value + " in rent to: player number " + this.owner.getNumber() + ".";
             this.owner.setBankBalance(rent);
             player.setBankBalance(-rent);
         }
