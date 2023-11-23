@@ -34,7 +34,7 @@ class Player {
     }
 
     public String toString() {
-        return "Player " + this.number + " " + this.tokenCharacter + System.lineSeparator() + " Bank balance: " + this.account.getBalance();
+        return "Player " + this.number + " " + this.tokenCharacter + System.lineSeparator() + "Bank balance: " + this.account.getBalance();
     }
 
     public int getBankBalance() {
