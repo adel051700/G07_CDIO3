@@ -38,7 +38,7 @@ class Gameboard
         fieldArr[i] = new field(name);
       } else {
         rent = value;
-        fieldArr[i] = new buyableField(name, value, color, rent, null);
+        fieldArr[i] = new buyableField(name, value, color, rent, "no one");
       }
       i++;
     }

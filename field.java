@@ -70,9 +70,9 @@ class buyableField extends field {
     private int value;
     private String color;
     private int rent;
-    private String[] owner;
+    private String owner;
 
-    public buyableField(String name, int value, String color, int rent, String[] owner) {
+    public buyableField(String name, int value, String color, int rent, String owner) {
         super(name);
         this.value = value;
         this.color = color;
