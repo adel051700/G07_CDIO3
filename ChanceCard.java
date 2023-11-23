@@ -9,11 +9,14 @@ public class ChanceCard
     private String tileName;
     private int tilesToMove = 0;
     private int moneyToChange = 0;
+    private boolean drawChance = false;
+    
     
     ChanceCard(String name)
     {
         this.name = name;
     }
+
     public String getName()
     {
         return this.name;
@@ -23,6 +26,7 @@ public class ChanceCard
     {
         this.moneyToChange = changeBalance;
     }
+
     public int getMoneyToChange()
     {
         return this.moneyToChange;
@@ -32,6 +36,7 @@ public class ChanceCard
     {
         this.text = text;
     }
+
     public String getText()
     {
         return this.text;
@@ -56,7 +61,7 @@ public class ChanceCard
             File fileToRead = new File(filename);
             Scanner Scanner = new Scanner(fileToRead);
             int j = 0;
-            while (Scanner.hasNextLine())
+            while (Scanner.hasNextLine() && j < chanceCards.length)
             {
                 String parsedLine = Scanner.nextLine();
                 String[] chanceCard = parsedLine.split(";");
@@ -88,9 +93,24 @@ public class ChanceCard
                             {
                                 workingCard.tilesToMove = Integer.parseInt(individualValues[2]);
                             }
-                            if(individualValues[1] == "DrawChance")
+                            if(individualValues[1] == "DrawChanceCar")
                             {
+                                workingCard.drawChance = true;
 
+                            }
+                            if(individualValues[1] == "DrawChanceCat")
+                            {
+                                workingCard.drawChance = true;
+
+                            }
+                            if(individualValues[1] == "DrawChanceDog")
+                            {
+                                workingCard.drawChance = true;
+                            }
+                            if(individualValues[1] == "DrawChanceBoat")
+                            {
+                                workingCard.drawChance = true;
+                                
                             }
                             if(individualValues[1] == "Jailfreevar")
                             {
