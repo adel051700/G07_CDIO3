@@ -9,15 +9,10 @@ class Monopoly {
         Scanner s = new Scanner(System.in);
         var gameBoard = Gameboard.getTilesFromFile("tiles");
         System.out.println(gameBoard[0].getDescription());
+        Dice dice1 = new Dice(6);
+        Dice dice2 = new Dice(6);
         while (true)
         {
-
-            Dice dice1 = new Dice(6);
-            Dice dice2 = new Dice(6);
-
-            
-
-
             try
             {
                 int n;
@@ -29,7 +24,6 @@ class Monopoly {
                 {
                     throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
                 }
-
 
             if (n<2 || n>4)
             {
@@ -56,7 +50,6 @@ class Monopoly {
                     }
                 }
             }
-
 
             // Game has ended and we will now calculate the winner(s);
 
