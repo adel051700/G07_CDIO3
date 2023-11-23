@@ -51,10 +51,7 @@ class Monopoly {
                 System.out.println(activePlayer.getPosition());
                 System.out.println(die1 + " " + die2);
                 activePlayer.setPosition(activePlayer.getPosition() + die1 + die2);
-                System.out.println(activePlayer.getPosition());
-                
-                System.out.println(gameBoard[0]);
-                System.out.println(gameBoard[0].getDescription());
+                System.out.println(gameBoard[activePlayer.getPosition()].getDescription());
                 
                 if (die1 != die2)
                 {
@@ -77,6 +74,7 @@ class Monopoly {
             int[] sharedPlaces = new int[n];
             for (int i = 0; i < players.length; i++)
             {
+                s.next();
                 int higherAmount = 0;
                 for (int k = 0; k < players.length; k++)
                 {

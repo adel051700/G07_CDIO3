@@ -49,7 +49,13 @@ class Player {
     }
     public void setPosition(int tileNumber)
     {
-        this.position = tileNumber % 24;
+
+        this.position += tileNumber;
+        if (this.position > tileNumber)
+        {
+            System.out.println("You passed Start and recieve 2");
+            this.position %= 24;
+        }
     }
     public int getPosition()
     {
