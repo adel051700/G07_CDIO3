@@ -35,7 +35,7 @@ class Monopoly {
             throw new IllegalArgumentException("Recieved an invalid amount: Please pick an integer between 2 and 4!");
         }
 
-        
+        // Creates array of players with given length;
         Player[] players = new Player[n];
 
         for (int i = 0; i < players.length; i++)
@@ -55,6 +55,10 @@ class Monopoly {
                 }
             }
         }
+
+
+        // Game has ended and we will now calculate the winner(s);
+
         Player[] leaderboard = new Player[n];
         int[] sharedPlaces = new int[n];
         for (int i = 0; i < players.length; i++)
