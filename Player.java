@@ -49,7 +49,7 @@ class Player {
     }
     public void setPosition(int tileNumber)
     {
-        this.position = tileNumber;
+        this.position = tileNumber % 24;
     }
     public int getPosition()
     {

@@ -39,20 +39,26 @@ class Monopoly {
             }
             // Main game loop:
             int playerTurn = 0;
+            Player activePlayer;
             boolean loseCondition = false;
             while (!loseCondition)
             {
-
                 playerTurn %= n;
+                activePlayer = players[playerTurn];
+                
                 System.out.println(playerTurn);
+                
                 die1 = dice.roll();
                 die2 = dice.roll();
-
+                System.out.println(activePlayer.getPosition());
+                System.out.println(die1 + " " + die2);
+                activePlayer.setPosition(activePlayer.getPosition() + die1 + die2);
+                System.out.println(activePlayer.getPosition());
                 if (die1 != die2)
                 {
                     playerTurn++;
                 }
-                System.out.println(die1 + " " + die2);
+                
                 for (int k = 0; k < players.length; k++)
                 {
                     if (players[k].getBankBalance() <= 0)
