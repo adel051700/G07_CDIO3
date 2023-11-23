@@ -10,6 +10,19 @@ public class ChanceCard
     private int tilesToMove = 0;
     private int moneyToChange = 0;
     private boolean drawChance = false;
+
+    public static void main(String[] args) {
+        ChanceCard[] chanceCards = getChanceCardsFromFile("chancecard.csv");
+
+        for (ChanceCard card : chanceCards) {
+            System.out.println("Name: " + card.getName());
+            System.out.println("Text: " + card.getText());
+            System.out.println("Tiles to move: " + card.getTilesToMove());
+            System.out.println("Money to change: " + card.getMoneyToChange());
+            System.out.println("Drawchance: " + card.getDrawChance());
+        }
+
+    }
     
     
     ChanceCard(String name)
@@ -50,6 +63,16 @@ public class ChanceCard
     public int getTilesToMove()
     {
         return this.tilesToMove;
+    }
+
+    private void setDrawChance(boolean drawChance)
+    {
+        this.drawChance = drawChance;
+    }
+
+    public boolean getDrawChance()
+    {
+        return this.drawChance;
     }
 
     public static ChanceCard[] getChanceCardsFromFile(String filename)
