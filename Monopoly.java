@@ -5,6 +5,7 @@ class Monopoly {
     
 
     public static void main(String[] args) {
+        System.out.println("Welcome to Monopoly Jr.! How many players are you? Press 2, 3 or 4");
         Scanner s = new Scanner(System.in);
         while (true)
         {
@@ -13,7 +14,7 @@ class Monopoly {
         Dice dice1 = new Dice(6);
         Dice dice2 = new Dice(6);
 
-        System.out.println("Welcome to Monopoly Jr.! How many players are you? Press 2, 3 or 4");
+        
 
 
         try
@@ -40,7 +41,7 @@ class Monopoly {
         for (int i = 0; i < players.length; i++)
         {
             players[i] = new Player(i+1,(24-(n*2)));
-        }
+        }   
 
         for (int i = 0; i < players.length+1; i++)
         {
@@ -122,6 +123,8 @@ class Monopoly {
             s.next();
             continue;
         }
+        break;
         }
+        
     }
 }
