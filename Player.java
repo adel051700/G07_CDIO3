@@ -51,7 +51,7 @@ class Player {
     {
 
         this.position += tileNumber;
-        if (this.position > tileNumber)
+        if (this.position >= 24)
         {
             System.out.println("You passed Start and recieve 2");
             this.position %= 24;

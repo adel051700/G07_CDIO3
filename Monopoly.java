@@ -33,28 +33,35 @@ class Monopoly {
             // Creates array of players with given length;
             Player[] players = new Player[n];
 
+            
+
             for (int i = 0; i < players.length; i++)
             {
                 players[i] = new Player(i+1,(24-(n*2)));
             }
-            // Main game loop:
             int playerTurn = 0;
             Player activePlayer;
             boolean loseCondition = false;
+            //
+            //
+            // Main game loop:
+            //
+            //
             while (!loseCondition)
             {
                 
                 playerTurn %= n;
-                System.out.println("It is player number " +(playerTurn+1)+" turn, press a enter to roll the dice:");
+                System.out.println("It is player number " +(playerTurn+1)+" turn, press enter to roll the dice:");
                 s.nextLine();
                 activePlayer = players[playerTurn];
                 
                 die1 = dice.roll();
                 die2 = dice.roll();
-                System.out.println(activePlayer.getPosition());
-                System.out.println(die1 + " " + die2);
+                //System.out.println(activePlayer.getPosition());
+                //System.out.println(die1 + " " + die2);
                 activePlayer.setPosition(activePlayer.getPosition() + die1 + die2);
-                System.out.println(gameBoard[activePlayer.getPosition()].getDescription());
+                System.out.println(gameBoard[activePlayer.getPosition()].getDescription(activePlayer));
+                
                 
                 
                 if (die1 != die2)
@@ -72,7 +79,12 @@ class Monopoly {
                 }
             }
 
+
+            //
+            //
             // Game has ended and we will now calculate the winner(s);
+            //
+            //
 
             Player[] leaderboard = new Player[n];
             int[] sharedPlaces = new int[n];

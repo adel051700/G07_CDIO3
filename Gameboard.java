@@ -2,10 +2,9 @@ import java.io.File;
 
 class Gameboard
 {
-    private Object[] gameBoard;
     public Gameboard()
     {
-        this.gameBoard = getTilesFromFile("tiles");
+        getTilesFromFile("tiles");
     }
 
     public static field[] getTilesFromFile(String fileName)
@@ -38,7 +37,7 @@ class Gameboard
         fieldArr[i] = new field(name);
       } else {
         rent = value;
-        fieldArr[i] = new buyableField(name, value, color, rent, "no one");
+        fieldArr[i] = new buyableField(name, value, color, rent, null);
       }
       i++;
     }
