@@ -24,10 +24,7 @@ Bank
 The bank is where all the money not owned by any players are. The bank also owns any field not owned by any player. When any player buys a field they therefore have to give the bank the amount of money the field they want to buy costs. If the player is told to pay or receive any money, but not told to get or pay them from/to any other player. Then they have to get/pay them from/to the bank. It's also the bank who pays the players 2$ each time the pass or land on the start field. 
 
 Jail
-You might end up in jail during thre game, if this happens you can get out by during one of the following 2:
-1) Pay 1$ to the bank on your next turn.
-2) Use a get out of jail free card.
-You can still get paid by other players if they land on a field owned by you, while being in jail.
+If a player lands on the go to jail field, the player has to pay 1$ to the bank in order to get out of jail.
 
 Special fields
 The game contains multiple special fields. This includes the following fields:
