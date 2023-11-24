@@ -13,7 +13,7 @@ group MoveCharacter
     tl --> gb : returnPlayerPos()
     deactivate tl
     deactivate gb
-    
+
 end
 
 
