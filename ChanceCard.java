@@ -10,8 +10,6 @@ public class ChanceCard
     private int tilesToMove;
     private int moneyToChange;
     private int jailFreeCards;
-    private boolean drawChance = false;
-    
     
     ChanceCard(String name)
     {
@@ -21,6 +19,11 @@ public class ChanceCard
     public String getName()
     {
         return this.name;
+    }
+    
+    public String[] getColor()
+    {
+        return this.color;
     }
 
     private void setMoneyToChange(int changeBalance)
