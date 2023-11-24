@@ -6,10 +6,8 @@ usecase "Roll die" as uc1
 usecase "Buy tile" as uc2
 usecase "Pay owner" as uc3
 usecase "Go to prison" as uc4
-usecase "Choose character" as uc5
 usecase "Go bankrupt" as uc6
 usecase "Pawn property" as uc7
-usecase "Lose property" as uc8
 usecase "Receive money" as uc9
 usecase "Lose money" as uc10
 usecase "Get chance card" as uc11
