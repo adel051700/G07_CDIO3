@@ -21,7 +21,7 @@ class Monopoly {
                 String input = s.nextLine(); // Read the entire line and remove leading/trailing whitespaces
 
                 if (input.isEmpty()) {
-                    throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
+                    throw new IllegalArgumentException("Didnt recieve an integer, Please enter a number between 2 and 4");
                 }
                 try
                 {
@@ -29,13 +29,13 @@ class Monopoly {
                 }
                 catch (Exception e)
                 {
-                    throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
+                    throw new IllegalArgumentException("Didnt recieve an integer, Please enter a number between 2 and 4");
                 }
             
 
             if (n<2 || n>4)
             {
-                throw new IllegalArgumentException("Recieved an invalid amount: Please pick an integer between 2 and 4!");
+                throw new IllegalArgumentException("Recieved an invalid amount: Please pick a number between 2 and 4!");
             } 
             
 
@@ -58,7 +58,7 @@ class Monopoly {
             //
             while (!loseCondition)
             {
-                System.out.println(gameBoard.getString(players));
+                //System.out.println(gameBoard.getString(players));
                 System.out.println("\n");
                 
                 playerTurn %= n;

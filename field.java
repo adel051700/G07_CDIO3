@@ -1,3 +1,4 @@
+import java.lang.reflect.Field;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -42,6 +43,7 @@ class specialField extends field {
 
 class chanceField extends field {
     private ChanceCard[] chanceCards = ChanceCard.getChanceCardsFromFile("chancecard.csv");
+    private Gameboard fields = new Gameboard();
 
     public chanceField(String name) {
         super(name);
@@ -61,8 +63,11 @@ class chanceField extends field {
         s.nextLine();
         String returnStatement = "The chancecard reads: " + this.chanceCards[chanceCardNum].getText();
         
-        ChanceCard cbs = this.chanceCards[chanceCardNum];
+        ChanceCard currChance = this.chanceCards[chanceCardNum];
         
+        if(ChanceCard.getColor() != null) {
+            
+        }
         
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
         return returnStatement;
