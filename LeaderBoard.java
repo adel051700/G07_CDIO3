@@ -14,7 +14,6 @@ class LeaderBoard
                 if (players[i].getBankBalance() < players[k].getBankBalance())
                 {
                     higherAmount++;
-                    
                 }
                 if (k == players.length-1 && leaderboard[higherAmount] == null)
                 {
