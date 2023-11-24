@@ -24,7 +24,7 @@ class Field {
     {}
 
 
-    public String getDescription(Player player, Player[] playerArr) {
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard) {
         String returnStatement = "You have landed on " + this.name + ", nothing further happens...";
         return returnStatement;
     }
@@ -36,7 +36,7 @@ class specialField extends Field {
     }
 
     @Override
-    public String getDescription(Player player, Player[] playerArr) {
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard) {
         String returnStatement = "You have landed on " + this.name + "!";
         System.out.println("You now have " + player.getBankBalance() + "$ left");
         return returnStatement;
@@ -46,11 +46,9 @@ class specialField extends Field {
 
 class chanceField extends Field {
     private ChanceCard[] chanceCards = ChanceCard.getChanceCardsFromFile("chancecard.csv");
-    private Field[] fields;  
 
     public chanceField(String name) {
         super(name);
-        //this.fields = Gameboard.getTilesFromFile("tiles.csv");
     }
 
     public static int drawChanceCard() {
@@ -59,7 +57,7 @@ class chanceField extends Field {
         return cardNumber;
     }
     @Override
-    public String getDescription(Player player, Player[] playerArr){
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard){
         
         var s = new Scanner(System.in);
         int chanceCardNum = drawChanceCard();
@@ -76,14 +74,13 @@ class chanceField extends Field {
             int currentRoute = 0;
 
             for(int i = 0; i < currChance.getColor().length; i++) {
-                for(int j = playerStartPos; j < this.fields.length + 1; j++) {
+                for(int j = playerStartPos; j < gameBoard.length + 1; j++) {
                     currentRoute++;
                     j %= 24;
                     
-                    if(currChance.getColor()[i] == this.fields[j].getColor()) {
+                    if(currChance.getColor()[i] == gameBoard[j].getColor()) {
                         if(currentRoute <= shortestRoute) {
                             shortestRoute = currentRoute;
-
                         }    
                         break;
                     }
@@ -91,9 +88,13 @@ class chanceField extends Field {
             }
             player.setPosition(shortestRoute);
         }
+        if (currChance.getTilesToMove()!=0)
+        {
+            player.setPosition(currChance.getTilesToMove());
+        }
+        
         
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
-        returnStatement += "\n-----------------------------------------------------";
         return returnStatement;
     }
 }
@@ -106,7 +107,7 @@ class prisonField extends Field {
     }
 
     @Override
-    public String getDescription(Player player, Player[] playerArr){
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard){
         String returnStatement = "You have landed on Go to Prison!";
         if (player.getOutOfJailFreeCard())
         {
@@ -155,7 +156,7 @@ class buyableField extends Field {
         this.multiplier = multiplier;
     }
     @Override
-    public String getDescription(Player player, Player[] playerArr) {
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard) {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color + " tile";
         if (owner != null && !owner.equals(player))
         {
