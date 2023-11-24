@@ -1,9 +1,10 @@
 class Player {
     private int number;
-    //private String tokenCharacter = "";
+    private String tokenCharacter;
     private Bank account;
     public boolean skipPlayerTurn = false;
     public boolean isInPrison = false;
+    private boolean getOutOfJailFreeCard = false;
     private int position;
 
     public Player (int number, int bankBalance) {
@@ -11,6 +12,14 @@ class Player {
         this.account = new Bank();
         this.account.changeBalance(bankBalance);
         this.position = 0;
+    }
+    public boolean getOutOfJailFreeCard()
+    {
+        return this.getOutOfJailFreeCard;
+    }
+    public void changeOutOfJailFreeCard()
+    {
+        this.getOutOfJailFreeCard = !this.getOutOfJailFreeCard;
     }
 
     public int getNumber()

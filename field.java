@@ -76,8 +76,18 @@ class prisonField extends field {
 
     @Override
     public String getDescription(Player player, Player[] playerArr){
-        String returnStatement = "You have landed on Go to Prison! " + "You have now been transfered to the prison and the turn is passed on...";
-        player.changeIsInPrison();
+        String returnStatement = "You have landed on Go to Prison!";
+        if (player.getOutOfJailFreeCard())
+        {
+            returnStatement += "\n But you have a get out of jail free card, and you get out, ready for next turn";
+        }
+        else
+        {
+            returnStatement += "\nYou have now been transfered to the prison and the turn is passed on...";
+            player.changeIsInPrison();
+        }
+        player.setPosition(6);
+        
         return returnStatement;
     }
 }

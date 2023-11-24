@@ -38,7 +38,7 @@ class Gameboard
       int value = Integer.parseInt(fieldValues[2]);
       if (color.equals("black")) {
         fieldArr[i] = new specialField(name);
-      } else if (color.equals("pink")) {
+      } else if (name.equals("ChanceCard")) {
         fieldArr[i] = new chanceField(name);
       } else if (color.equals("stripes")) {
         fieldArr[i] = new prisonField(name);

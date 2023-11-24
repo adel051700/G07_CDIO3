@@ -15,6 +15,7 @@ class Monopoly {
         {
             try
             {
+                
                 int n;
                 if (s.hasNextInt())
                 {
@@ -24,6 +25,7 @@ class Monopoly {
                 {
                     throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
                 }
+            
 
             if (n<2 || n>4)
             {
@@ -88,7 +90,6 @@ class Monopoly {
                 System.out.println(gameBoard[activePlayer.getPosition()].getDescription(activePlayer,players));
                 
                 
-                
                 if (die1 != die2)
                 {
                     playerTurn++;
@@ -100,7 +101,7 @@ class Monopoly {
                 
                 for (int k = 0; k < players.length; k++)
                 {
-                    if (players[k].getBankBalance() == 0)
+                    if (players[k].getBankBalance() != 0)
                     {
                         // Breaks to calculate the winner(s);
                         loseCondition = true;
@@ -116,9 +117,8 @@ class Monopoly {
                         }
                     }
                 }
-                
             }
-            LeaderBoard.printWinner(players,n,gameBoard);
+            System.out.println(LeaderBoard.printWinner(players,n,gameBoard));
             
             }
             catch(IllegalArgumentException e)
