@@ -17,6 +17,12 @@ class Monopoly {
             {
                 
                 int n;
+
+                String input = s.nextLine().trim(); // Read the entire line and remove leading/trailing whitespaces
+
+                if (input.isEmpty()) {
+                    throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
+                }
                 if (s.hasNextInt())
                 {
                     n = s.nextInt();
@@ -30,7 +36,8 @@ class Monopoly {
             if (n<2 || n>4)
             {
                 throw new IllegalArgumentException("Recieved an invalid amount: Please pick an integer between 2 and 4!");
-            }
+            } 
+            
 
             // Creates array of players with given length;
             Player[] players = new Player[n];
@@ -124,6 +131,7 @@ class Monopoly {
             catch(IllegalArgumentException e)
             {
                 System.out.println(e.getMessage());
+                s.next();
                 s.next();
                 continue;
             }
