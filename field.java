@@ -41,6 +41,7 @@ class specialField extends field {
 }
 
 class chanceField extends field {
+    private ChanceCard[] chanceCards = ChanceCard.getChanceCardsFromFile("chancecard.csv");
 
     public chanceField(String name) {
         super(name);
@@ -53,15 +54,17 @@ class chanceField extends field {
     }
     @Override
     public String getDescription(Player player, Player[] playerArr){
-        ChanceCard[] chanceCards = ChanceCard.getChanceCardsFromFile("chancecard.csv");
+        
         var s = new Scanner(System.in);
         int chanceCardNum = drawChanceCard();
         System.out.println("You have landed on a chancefield. Press a button to draw a chancecard!");
         s.nextLine();
-        String returnStatement = "The chancecard reads: " + chanceCards[chanceCardNum].getText();
-
+        String returnStatement = "The chancecard reads: " + this.chanceCards[chanceCardNum].getText();
+        
+        ChanceCard cbs = this.chanceCards[chanceCardNum];
+        
+        
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
-        s.close();
         return returnStatement;
     }
 }
