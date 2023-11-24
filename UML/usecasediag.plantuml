@@ -25,15 +25,12 @@ pl -- uc1
 pl -- uc2
 pl -- uc3
 pl -- uc4
-pl -- uc5
 pl -- uc6
 pl -- uc7
-pl -- uc8
 pl -- uc9
 pl -- uc10
 pl -- uc11
 pl -- uc12
-uc5 -- gm
 uc9 -- bk
 uc10 -- bk
 uc11 -- gm
