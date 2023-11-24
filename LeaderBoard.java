@@ -20,7 +20,6 @@ class LeaderBoard
                 {
                     
                     leaderboard[higherAmount] = players[i];
-                    System.out.println(leaderboard);
                 }
                 else if (leaderboard[higherAmount] != null)
                 {
@@ -52,9 +51,6 @@ class LeaderBoard
             boolean share = false;
             for (int k = 0; k < sharedPlaces.length; k++)
             {
-                System.out.println("k: " +k);
-                System.out.println(leaderboard[0].getBankBalance());
-                System.out.println(sharedPlaces[k]);
                 if (leaderboard[i].getBankBalance() == sharedPlaces[k])
                 {
                     share = true;
@@ -62,13 +58,17 @@ class LeaderBoard
             }
             if (!share)
             {
-                returnStatement += "Place "+ (i+1) + " goes to player: " + leaderboard[i].getNumber() + " with a score of: "  + leaderboard[i].getBankBalance();
+                returnStatement += "\nPlace "+ (i+1) + " goes to player: " + leaderboard[i].getNumber() + " with a score of: "  + leaderboard[i].getBankBalance();
             }
             else
             {
                 String sharedStatement = "Place number " + (i+1) + " is shared by players: " + (i+1); 
-                for (int x = (i+1); x < leaderboard.length; x++)
+                for (int x = (i); x < leaderboard.length; x++)
                 {
+                    if (leaderboard[x].getBankBalance() != leaderboard[i].getBankBalance())
+                    {
+                        break;
+                    }
                     sharedStatement += ", " + (x+1);
                     i++;
                 }
