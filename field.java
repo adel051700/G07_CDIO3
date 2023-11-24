@@ -117,9 +117,10 @@ class prisonField extends Field {
         {
             returnStatement += "\nYou have now been transfered to the prison and the turn is passed on...";
             player.changeIsInPrison();
+            
         }
         player.setPosition(6);
-        
+        returnStatement += "\n-----------------------------------------------------";
         return returnStatement;
     }
 }

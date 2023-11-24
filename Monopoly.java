@@ -125,7 +125,7 @@ class Monopoly {
                         }
                     }
                 }
-                System.out.print("\n-----------------------------------------------------");
+                
             }
             System.out.println(LeaderBoard.printWinner(players,n,gameBoard));
             
