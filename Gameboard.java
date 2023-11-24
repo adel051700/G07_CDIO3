@@ -7,7 +7,6 @@ class Gameboard
     {
         this.GameBoard = getTilesFromFile("tiles");
     }
-    
     public String toString(Player[] players)
     {
       String statement = "";
