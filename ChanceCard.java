@@ -7,9 +7,9 @@ public class ChanceCard
     private String name;
     private String[] color;
     private String tileName;
-    private int tilesToMove = 0;
-    private int moneyToChange = 0;
-    private int jailFreeCards = 0;
+    private int tilesToMove;
+    private int moneyToChange;
+    private int jailFreeCards;
     private boolean drawChance = false;
     
     
