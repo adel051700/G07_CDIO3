@@ -75,7 +75,7 @@ class prisonField extends field {
     }
 
     @Override
-    public String (Player player, Player[] playerArr){
+    public String getDescription(Player player, Player[] playerArr){
         String returnStatement = "You have landed on Go to Prison! " + "You have now been transfered to the prison and the turn is passed on...";
         player.changeIsInPrison();
         return returnStatement;
