@@ -45,6 +45,7 @@ class LeaderBoard
                 }
             }
         }
+        
         for (int i = 0; i < leaderboard.length; i++)
         {
             boolean share = false;
@@ -62,20 +63,23 @@ class LeaderBoard
             else
             {
                 String sharedStatement = "Place number " + (i+1) + " is shared by players: " + (i+1); 
-                for (int x = (i); x < leaderboard.length; x++)
+                for (int x = (i+1); x < leaderboard.length; x++)
                 {
                     if (leaderboard[x].getBankBalance() != leaderboard[i].getBankBalance())
                     {
                         break;
                     }
-                    sharedStatement += ", " + (x+1);
+                    sharedStatement += ", " + (leaderboard[x].getNumber());
                     i++;
                 }
-                returnStatement += sharedStatement + "\n with a score of: " + leaderboard[i-1].getBankBalance();
+
+                    returnStatement += sharedStatement + "\n with a score of: " + leaderboard[i].getBankBalance();
             }
                 
-            
-        }
+            }
+                
+        
+
         return returnStatement;
     }
 }
