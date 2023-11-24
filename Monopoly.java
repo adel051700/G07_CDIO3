@@ -58,7 +58,7 @@ class Monopoly {
             //
             while (!loseCondition)
             {
-                System.out.println(gameBoard.getString(players));
+                //System.out.println(gameBoard.getString(players));
                 System.out.println("\n");
                 
                 playerTurn %= n;
