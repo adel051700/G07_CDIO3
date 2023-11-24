@@ -18,19 +18,15 @@ class Monopoly {
                 
                 int n;
 
-                String input = s.nextLine().trim(); // Read the entire line and remove leading/trailing whitespaces
+                String input = s.nextLine(); // Read the entire line and remove leading/trailing whitespaces
 
                 if (input.isEmpty()) {
                     throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
                 }
-                if (s.hasNextInt())
-                {
-                    n = s.nextInt();
-                }
-                else
-                {
-                    throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
-                }
+                n = Integer.parseInt(input);
+                
+                
+                //throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
             
 
             if (n<2 || n>4)
@@ -131,8 +127,7 @@ class Monopoly {
             catch(IllegalArgumentException e)
             {
                 System.out.println(e.getMessage());
-                s.next();
-                s.next();
+                //s.next();
                 continue;
             }
             s.close();
