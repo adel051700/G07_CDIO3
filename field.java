@@ -48,7 +48,9 @@ class chanceField extends field {
 
     public static int drawChanceCard() {
         Random random = new Random();
-        int cardNumber = random.nextInt((15) + 1);
+       // The line `int cardNumber = random.nextInt(15-0+1);` is generating a random number between 0
+       // and 15 (inclusive).
+        int cardNumber = random.nextInt(15-0+1);
         return cardNumber;
     }
     @Override
