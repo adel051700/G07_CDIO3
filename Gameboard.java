@@ -2,7 +2,7 @@ import java.io.File;
 
 class Gameboard
 {
-  private field[] GameBoard;
+  public field[] GameBoard;
     public Gameboard()
     {
         this.GameBoard = getTilesFromFile("tiles");
