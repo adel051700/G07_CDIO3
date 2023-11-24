@@ -62,9 +62,8 @@ class chanceField extends field {
         s.nextLine();
         String returnStatement = "The chancecard reads: " + chanceCards[chanceCardNum].getText();
 
-
-
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
+        s.close();
         return returnStatement;
     }
 }
