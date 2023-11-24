@@ -58,7 +58,7 @@ class Monopoly {
             //
             while (!loseCondition)
             {
-                System.out.println(Gameboard.toString(gameBoard,players));
+                //System.out.println(Gameboard.toString(gameBoard,players));
                 System.out.println("\n");
                 
                 playerTurn %= n;
@@ -89,6 +89,7 @@ class Monopoly {
                         continue;
                     }
                 }
+                System.out.println(activePlayer.getPosition());
 
                 die1 = dice.roll();
                 die2 = dice.roll();
