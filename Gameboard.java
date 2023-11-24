@@ -7,13 +7,13 @@ class Gameboard
     {
         this.GameBoard = getTilesFromFile("tiles");
     }
-    public String toString(Player[] players)
+    public static String toString(Field[] GameBoard ,Player[] players)
     {
       String statement = "";
       
       for (int i = 0; i < GameBoard.length; i++)
       {
-        statement += GameBoard[i].name;
+        statement += GameBoard[i].name + " ";
         for (int k = 0; k < players.length; k++)
         {
           if (players[k].getPosition() == i)
