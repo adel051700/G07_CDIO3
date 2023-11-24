@@ -1,12 +1,12 @@
-import java.lang.reflect.Field;
+//import java.lang.reflect.Field;
 import java.util.Random;
 import java.util.Scanner;
 
-public class field {
+class Field {
     public String name;
     private Player owner = null;
 
-    public field(String name) {
+    public Field(String name) {
         this.name = name;
     }
     public Player getOwner()
@@ -30,7 +30,7 @@ public class field {
     }
 }
 
-class specialField extends field {
+class specialField extends Field {
     public specialField(String name) {
         super(name);
     }
@@ -44,12 +44,13 @@ class specialField extends field {
 
 }
 
-class chanceField extends field {
+class chanceField extends Field {
     private ChanceCard[] chanceCards = ChanceCard.getChanceCardsFromFile("chancecard.csv");
-    var fields = Gameboard.getTilesFromFile("tiles.csv"); 
+    private Field[] fields;  
 
     public chanceField(String name) {
         super(name);
+        //this.fields = Gameboard.getTilesFromFile("tiles.csv");
     }
 
     public static int drawChanceCard() {
@@ -92,11 +93,12 @@ class chanceField extends field {
         }
         
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
+        returnStatement += "\n-----------------------------------------------------";
         return returnStatement;
     }
 }
 
-class prisonField extends field {
+class prisonField extends Field {
     private boolean isInPrison;
 
     public prisonField(String name) {
@@ -121,7 +123,7 @@ class prisonField extends field {
     }
 }
 
-class buyableField extends field {
+class buyableField extends Field {
     private int value;
     private String color;
     private int multiplier;

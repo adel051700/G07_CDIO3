@@ -1,6 +1,6 @@
 class LeaderBoard 
 {
-    public static String printWinner(Player[] players, int n, field[] gameBoard)
+    public static String printWinner(Player[] players, int n, Field[] gameBoard)
     {
         String returnStatement = "";
         java.util.Scanner s = new java.util.Scanner(System.in);

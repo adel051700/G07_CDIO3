@@ -7,7 +7,7 @@ class Monopoly {
     public static void main(String[] args) {
         System.out.println("Welcome to Monopoly Jr.! How many players are you? Press 2, 3 or 4");
         Scanner s = new Scanner(System.in);
-        var gameBoard = Gameboard.getTilesFromFile("tiles");
+        Field[] gameBoard = Gameboard.getTilesFromFile("tiles.csv");
         Dice dice = new Dice(6);
         int die1;
         int die2;
