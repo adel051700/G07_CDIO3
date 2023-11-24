@@ -86,16 +86,15 @@ class Monopoly {
                     {
                         activePlayer.changeIsInPrison();
                         playerTurn++;
-                        continue;
                     }
                 }
-                System.out.println(activePlayer.getPosition());
 
                 die1 = dice.roll();
                 die2 = dice.roll();
                 //System.out.println(activePlayer.getPosition());
                 //System.out.println(die1 + " " + die2);
                 activePlayer.setPosition(activePlayer.getPosition() + die1 + die2);
+                System.out.println(die1 + " " + die2);
                 System.out.println(gameBoard[activePlayer.getPosition()].getDescription(activePlayer,players,gameBoard,false));
                 
                 
