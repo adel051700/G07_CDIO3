@@ -1,0 +1,21 @@
+@startuml
+
+hide footbox
+group MoveCharacter 
+    participant ":Gameboard" as gb
+    participant ":Tile" as tl
+
+    
+    -> gb : rollDice()
+    activate gb
+    gb -> tl : getDiceSum()
+    activate tl
+    tl --> gb : returnPlayerPos()
+    deactivate tl
+    deactivate gb
+
+end
+
+
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+class Bank {
+    int balance
+
+}
+
+class Player {
+    String name
+    var amountOfPlayers
+}
+
+class ChanceCard {
+    var action
+    var amount
+}
+
+class GameBoard {
+    Tiles tile
+}
+
+class Tile {
+    var field
+    var tileAction
+}
+
+class Dice {
+    int amountOfDice
+    var diceRoll()
+}
+
+Bank -- Player
+Dice -- Player
+Tile -- GameBoard
+ChanceCard -- GameBoard
+Player -- GameBoard
+
+
+@enduml

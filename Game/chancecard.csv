@@ -1,0 +1,16 @@
+Free space;Advance to a brown or yellow space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveToColor:brown, yellow
+Free space;Advance to a light blue or red space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveToColor:light blue, red
+Free space;Advance to a pink or dark blue space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveToColor:pink,dark blue
+Free space;Advance to an orange or green space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveToColor:orange,green
+Free space;Advance to an orange space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveToColor:orange
+Free space;Advance to a red space. If one is available get it for free, Otherwise pay rent to the owner.;NextAction:moveToColor:red
+Free space;Advance to a light blue space. If one is available get it for free, otherwise pay rent to the owner.;NextAction:moveToColor:light blue
+Skatepark;Advance to the Skatepark. If no one owns it, get it for free, otherwise pay rent to the owner.;NextAction:moveToTile:Skatepark
+Boardwalk;Advance to Boardwalk. If no one owns it, get it for free, otherwise pay rent to the owner.;NextAction:moveToTile:Boardwalk
+Homework;You've made all your homework. Collect $2 from the bank;MoneyChange:2
+Birthday;It's your birthday. Everyone gives you $1. Happy Birthday;MoneyChange:0:getAmountFromOtherPlayers:1
+Candy;You ate too much candy pay $2 to the bank;MoneyChange:-2
+Go;Advance to Go, collect $2;NextAction:moveToTile:Go;
+Move1;Move forward one space;NextAction:moveForward:1
+Move2;Move forward up to 5 spaces.;NextAction:moveToInput
+Jailfree;You got a 'get out of jail free' card!;NextAction:Jailfreevar:1
