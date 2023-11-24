@@ -63,7 +63,7 @@ class Monopoly {
                 
                 playerTurn %= n;
                 System.out.println("It is player number " +(playerTurn+1)+" turn, press enter to roll the dice:");
-                //s.nextLine();
+                s.nextLine();
                 activePlayer = players[playerTurn];
                 
                 if (activePlayer.getSkipPlayerTurn())
