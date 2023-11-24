@@ -7,7 +7,6 @@ usecase "Buy tile" as uc2
 usecase "Pay owner" as uc3
 usecase "Go to prison" as uc4
 usecase "Go bankrupt" as uc6
-usecase "Pawn property" as uc7
 usecase "Receive money" as uc9
 usecase "Lose money" as uc10
 usecase "Get chance card" as uc11
@@ -26,7 +25,6 @@ pl -- uc2
 pl -- uc3
 pl -- uc4
 pl -- uc6
-pl -- uc7
 pl -- uc9
 pl -- uc10
 pl -- uc11
