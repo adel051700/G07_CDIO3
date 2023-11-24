@@ -48,7 +48,7 @@ class chanceField extends field {
 
     public static int drawChanceCard() {
         Random random = new Random();
-        int cardNumber = random.nextInt((15) + 1);
+        int cardNumber = random.nextInt(15);
         return cardNumber;
     }
     @Override
