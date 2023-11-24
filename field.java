@@ -48,7 +48,7 @@ class chanceField extends field {
 
     public static int drawChanceCard() {
         Random random = new Random();
-        int cardNumber = random.nextInt(15);
+        int cardNumber = random.nextInt((15) + 1);
         return cardNumber;
     }
     @Override
@@ -60,9 +60,8 @@ class chanceField extends field {
         s.nextLine();
         String returnStatement = "The chancecard reads: " + chanceCards[chanceCardNum].getText();
 
-
-
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
+        s.close();
         return returnStatement;
     }
 }
