@@ -34,7 +34,7 @@ class Gameboard
     field[]fieldArr = new field[numberOfTiles];
     try
     {
-    var fileToRead = new File(fileName + ".csv");
+    var fileToRead = new File(fileName);
     var Scanner = new java.util.Scanner(fileToRead);
     int i = 0;
       while (Scanner.hasNextLine())

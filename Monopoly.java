@@ -63,7 +63,7 @@ class Monopoly {
                 
                 playerTurn %= n;
                 System.out.println("It is player number " +(playerTurn+1)+" turn, press enter to roll the dice:");
-                s.nextLine();
+                //s.nextLine();
                 activePlayer = players[playerTurn];
                 
                 if (activePlayer.getSkipPlayerTurn())
@@ -109,7 +109,7 @@ class Monopoly {
                 
                 for (int k = 0; k < players.length; k++)
                 {
-                    if (players[k].getBankBalance() != 0)
+                    if (players[k].getBankBalance() == 0)
                     {
                         // Breaks to calculate the winner(s);
                         loseCondition = true;

@@ -17,6 +17,9 @@ public class field {
     {
         return 0;
     }
+    public String getColor() {
+        return "";
+    }
     public void setMultiplier(int fillerFunctionForFunctionalityInBuyableFields)
     {}
 
@@ -43,7 +46,7 @@ class specialField extends field {
 
 class chanceField extends field {
     private ChanceCard[] chanceCards = ChanceCard.getChanceCardsFromFile("chancecard.csv");
-    private Gameboard fields = new Gameboard();
+    var fields = Gameboard.getTilesFromFile("tiles.csv"); 
 
     public chanceField(String name) {
         super(name);
@@ -64,9 +67,28 @@ class chanceField extends field {
         String returnStatement = "The chancecard reads: " + this.chanceCards[chanceCardNum].getText();
         
         ChanceCard currChance = this.chanceCards[chanceCardNum];
+
         
-        if(ChanceCard.getColor() != null) {
-            
+        if(currChance.getColor() != null) {
+            int shortestRoute = 0;
+            int playerStartPos = player.getPosition();
+            int currentRoute = 0;
+
+            for(int i = 0; i < currChance.getColor().length; i++) {
+                for(int j = playerStartPos; j < this.fields.length + 1; j++) {
+                    currentRoute++;
+                    j %= 24;
+                    
+                    if(currChance.getColor()[i] == this.fields[j].getColor()) {
+                        if(currentRoute <= shortestRoute) {
+                            shortestRoute = currentRoute;
+
+                        }    
+                        break;
+                    }
+                }
+            }
+            player.setPosition(shortestRoute);
         }
         
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
@@ -121,6 +143,10 @@ class buyableField extends field {
     public int getValue()
     {
         return this.value;
+    }
+    @Override
+    public String getColor() {
+        return this.color;
     }
 
     public void setMultiplier(int multiplier) {
