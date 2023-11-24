@@ -27,7 +27,7 @@ public class JUnitTestNegativeBalance {
 
     @Test 
     public void testToString() {
-        String expected = "Player 1 " + System.lineSeparator()+ "Bank balance: 20";
+        String expected = "Player 1" + System.lineSeparator()+ "Bank balance: 20";
         assertEquals(expected, player.toString());
     }
 }
