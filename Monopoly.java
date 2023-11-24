@@ -49,19 +49,43 @@ class Monopoly {
             //
             while (!loseCondition)
             {
+                System.out.println("\n");
                 
                 playerTurn %= n;
                 System.out.println("It is player number " +(playerTurn+1)+" turn, press enter to roll the dice:");
                 s.nextLine();
                 activePlayer = players[playerTurn];
                 
+                if (activePlayer.getSkipPlayerTurn())
+                {
+                    System.out.println("Your turn is skipped.");
+                    playerTurn++;
+                    continue;
+                }
+
+                if (activePlayer.getIsInPrison())
+                {
+                    System.out.println("You are in prison, and must therefore pay 1$ to continue playing");
+                    activePlayer.setBankBalance(-1);
+                    System.out.println("Your balance is now, " + activePlayer.getBankBalance()+ "$");
+                    if (activePlayer.getBankBalance()==0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        activePlayer.changeIsInPrison();
+                        playerTurn++;
+                        continue;
+                    }
+                }
+
                 die1 = dice.roll();
                 die2 = dice.roll();
                 //System.out.println(activePlayer.getPosition());
                 //System.out.println(die1 + " " + die2);
                 activePlayer.setPosition(activePlayer.getPosition() + die1 + die2);
                 System.out.println(gameBoard[activePlayer.getPosition()].getDescription(activePlayer));
-                System.out.println(activePlayer.getBankBalance());
                 
                 
                 
@@ -69,10 +93,14 @@ class Monopoly {
                 {
                     playerTurn++;
                 }
+                else
+                {
+                    System.out.println("You rolled two " + die1 + "\n It is therefore your turn again");
+                }
                 
                 for (int k = 0; k < players.length; k++)
                 {
-                    if (players[k].getBankBalance() <= 0)
+                    if (players[k].getBankBalance() == 0)
                     {
                         // Breaks to calculate the winner(s);
                         loseCondition = true;
@@ -84,80 +112,13 @@ class Monopoly {
                     {
                         if (gameBoard[j].getOwner().equals(gameBoard[j+1].getOwner()))
                         {
-                            gameBoard[j].setRent(2);
+                            gameBoard[j].setMultiplier(2);
                         }
                     }
                 }
-            }
-
-
-            //
-            //
-            // Game has ended and we will now calculate the winner(s);
-            //
-            //
-
-            Player[] leaderboard = new Player[n];
-            int[] sharedPlaces = new int[n];
-            for (int i = 0; i < players.length; i++)
-            {
-                s.next();
-                int higherAmount = 0;
-                for (int k = 0; k < players.length; k++)
-                {
-                    if (players[i].getBankBalance() < players[k].getBankBalance() && i!=k)
-                    {
-                        higherAmount++;
-                        
-                    }
-
-
-                    if (k == players.length-1 && leaderboard[higherAmount] == null)
-                    {
-                        leaderboard[higherAmount] = players[i];
-                    }
-                    else if (leaderboard[higherAmount] != null)
-                    {
-                        for (int j = higherAmount; j < leaderboard.length; j++)
-                        {
-                            if (leaderboard[j] == null)
-                            {
-                                leaderboard[j] = players[i];
-                                sharedPlaces[j] = players[i].getBankBalance();
-                            }
-                        }
-                    }
-                }
-            }
-
-            for (int i = 0; i < leaderboard.length; i++)
-            {
-                boolean share = false;
-                for (int k = 0; k < sharedPlaces.length; k++)
-                {
-                    if (leaderboard[i].getBankBalance() == sharedPlaces[k])
-                    {
-                        share = true;
-                    }
-                }
-                if (!share)
-                {
-                    System.out.println("Place "+ (i+1) + " goes to player: " + leaderboard[i].getNumber() + " with a score of: "  + leaderboard[i].getBankBalance());
-                }
-                else
-                {
-                    String sharedStatement = "Place number " + (i+1) + " is shared by players: " + (i+1); 
-                    for (int x = (i+1); x < leaderboard.length; x++)
-                    {
-                        sharedStatement += ", " + (x+1);
-                        i++;
-                    }
-                    System.out.println(sharedStatement);
-                }
-                    
                 
             }
-            
+            LeaderBoard.printWinner(players,n,gameBoard);
             
             }
             catch(IllegalArgumentException e)

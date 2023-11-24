@@ -1,10 +1,9 @@
 class Player {
     private int number;
-    private String tokenCharacter = "";
+    //private String tokenCharacter = "";
     private Bank account;
     public boolean skipPlayerTurn = false;
-    public boolean isInPrison = false;
-    public boolean isBankrupt = false;
+    public boolean isInPrison = true;
     private int position;
 
     public Player (int number, int bankBalance) {
@@ -31,7 +30,7 @@ class Player {
         return isInPrison;
     }
 
-    public void setIsInPrison() {
+    public void changeIsInPrison() {
         this.isInPrison = !getIsInPrison();
     }
 
@@ -53,7 +52,7 @@ class Player {
         this.position += tileNumber;
         if (this.position >= 24)
         {
-            System.out.println("You passed Start and recieve 2");
+            System.out.println("You passed Start and recieve 2$");
             this.setBankBalance(2);
             this.position %= 24;
         }

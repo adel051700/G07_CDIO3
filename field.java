@@ -12,7 +12,11 @@ public class field {
     {
         return this.owner;
     }
-    public void setRent(int fillerFunctionForFunctionalityInBuyableFields)
+    public int getValue()
+    {
+        return 0;
+    }
+    public void setMultiplier(int fillerFunctionForFunctionalityInBuyableFields)
     {}
 
 
@@ -30,7 +34,7 @@ class specialField extends field {
     @Override
     public String getDescription(Player player) {
         String returnStatement = "You have landed on " + this.name + "!";
-        System.out.println("You now have " + player.getBankBalance() + " left");
+        System.out.println("You now have " + player.getBankBalance() + "$ left");
         return returnStatement;
     }
 
@@ -58,7 +62,7 @@ class chanceField extends field {
 
 
 
-        returnStatement += "\n You now have " + player.getBankBalance() + " left";
+        returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
         return returnStatement;
     }
 }
@@ -73,6 +77,7 @@ class prisonField extends field {
     @Override
     public String getDescription(Player player){
         String returnStatement = "You have landed on Go to Prison! " + "You have now been transfered to the prison and the turn is passed on...";
+        player.changeIsInPrison();
         return returnStatement;
     }
 }
@@ -80,14 +85,14 @@ class prisonField extends field {
 class buyableField extends field {
     private int value;
     private String color;
-    private int rent;
+    private int multiplier;
     private Player owner;
 
-    public buyableField(String name, int value, String color, int rent, Player owner) {
+    public buyableField(String name, int value, String color, int multiplier, Player owner) {
         super(name);
         this.value = value;
         this.color = color;
-        this.rent = rent;
+        this.multiplier = multiplier;
         this.owner = owner;
     }
     @Override
@@ -95,29 +100,38 @@ class buyableField extends field {
     {
         return this.owner;
     }
+    @Override
+    public int getValue()
+    {
+        return this.value;
+    }
 
-    public void setRent(int multiplier) {
-        this.rent = this.rent * multiplier;
+    public void setMultiplier(int multiplier) {
+        this.multiplier = multiplier;
     }
     @Override
     public String getDescription(Player player) {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color + " tile";
-        if (owner != null)
+        if (owner != null && !owner.equals(player))
         {
             returnStatement+= "\n The tile is owned by: player number " + this.owner.getNumber();
-            returnStatement += "\n You pay " + this.value + " in rent to: player number " + this.owner.getNumber() + ".";
-            this.owner.setBankBalance(rent);
-            player.setBankBalance(-rent);
+            returnStatement += "\n You pay " + this.value + "$ in rent to: player number " + this.owner.getNumber() + ".";
+            this.owner.setBankBalance(value*multiplier);
+            player.setBankBalance(-value*multiplier);
+        }
+        else if (owner == player)
+        {
+            returnStatement += "\n You already own this tile, and nothing further happens...";
         }
         else
         {
             
-            returnStatement += "\n You buy this tile for " + this.value;
+            returnStatement += "\n You buy this tile for " + this.value + "$";
             player.setBankBalance(-value);
             this.owner = player;
         }
             
-        returnStatement += "\n You now have " + player.getBankBalance() + " left";
+        returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
 
         
         return returnStatement;
