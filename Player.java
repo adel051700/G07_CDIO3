@@ -1,6 +1,5 @@
 class Player {
     private int number;
-    private String tokenCharacter;
     private Bank account;
     public boolean skipPlayerTurn = false;
     public boolean isInPrison = false;
