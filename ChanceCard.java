@@ -110,6 +110,7 @@ public class ChanceCard
                             if(individualValues[1] == "moveForward")
                             {
                                 workingCard.tilesToMove = Integer.parseInt(individualValues[2]);
+                                System.out.println(workingCard.tilesToMove);
                             }
                             if(individualValues[1] == "moveToInput")
                             {

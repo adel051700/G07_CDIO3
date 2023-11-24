@@ -28,7 +28,7 @@ class Field {
     {}
 
 
-    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard) {
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard, boolean getFree) {
         String returnStatement = "You have landed on " + this.name + ", nothing further happens...";
         return returnStatement;
     }
@@ -40,7 +40,7 @@ class specialField extends Field {
     }
 
     @Override
-    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard) {
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard, boolean getFree) {
         String returnStatement = "You have landed on " + this.name + "!";
         System.out.println("You now have " + player.getBankBalance() + "$ left");
         return returnStatement;
@@ -61,7 +61,7 @@ class chanceField extends Field {
         return cardNumber;
     }
     @Override
-    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard){
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard, boolean getFree){
         
         var s = new Scanner(System.in);
         int chanceCardNum = drawChanceCard();
@@ -91,14 +91,17 @@ class chanceField extends Field {
                 }
             }
             player.setPosition(shortestRoute);
+            return gameBoard[player.getPosition()].getDescription(player, playerArr, gameBoard,false);
         }
         if (currChance.getTilesToMove()!=0)
         {
             player.setPosition(currChance.getTilesToMove());
+            return gameBoard[player.getPosition()].getDescription(player, playerArr, gameBoard,false);
         }
         if (currChance.getMoneyToChange() != 0)
         {
             player.setBankBalance(currChance.getMoneyToChange());
+            System.out.println(currChance.getMoneyToChange());
         }
         if (currChance.getJailFreeCards() != 0 && !player.getOutOfJailFreeCard())
         {
@@ -113,7 +116,7 @@ class chanceField extends Field {
                 
                 if(currChance.getTileName() == gameBoard[j].getName()) {
                     player.setPosition(currentRoute);
-                    break;
+                    return gameBoard[j].getDescription(player, playerArr, gameBoard,false);
                 }
             }
             }
@@ -132,6 +135,7 @@ class chanceField extends Field {
 
         
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
+        returnStatement += "\n----------------------------------------------------------";
         return returnStatement;
     }
 }
@@ -144,7 +148,7 @@ class prisonField extends Field {
     }
 
     @Override
-    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard){
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard, boolean getFree){
         String returnStatement = "You have landed on Go to Prison!";
         if (player.getOutOfJailFreeCard())
         {
@@ -157,7 +161,6 @@ class prisonField extends Field {
             
         }
         player.setPosition(6);
-        returnStatement += "\n-----------------------------------------------------";
         return returnStatement;
     }
 }
@@ -194,8 +197,12 @@ class buyableField extends Field {
         this.multiplier = multiplier;
     }
     @Override
-    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard) {
+    public String getDescription(Player player, Player[] playerArr, Field[] gameBoard, boolean getFree) {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color + " tile";
+        if(this.owner == null && getFree && owner != player) {
+            this.owner = player;
+            returnStatement += "\n This tile isnt owned by anyone, so you get it for free!";
+        }
         if (owner != null && !owner.equals(player))
         {
             returnStatement+= "\n The tile is owned by: player number " + this.owner.getNumber();
