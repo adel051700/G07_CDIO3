@@ -120,7 +120,6 @@ class prisonField extends Field {
             
         }
         player.setPosition(6);
-        returnStatement += "\n-----------------------------------------------------";
         return returnStatement;
     }
 }
