@@ -59,11 +59,12 @@ class LeaderBoard
             if (!share)
             {
                 returnStatement += "\nPlace "+ (i+1) + " goes to player: " + leaderboard[i].getNumber() + " with a score of: "  + leaderboard[i].getBankBalance();
+
             }
             else
             {
                 String sharedStatement = "Place number " + (i+1) + " is shared by players: " + (i+1); 
-                for (int x = (i+1); x < leaderboard.length; x++)
+                for (int x = i; x < leaderboard.length-1; x++)
                 {
                     if (leaderboard[x].getBankBalance() != leaderboard[i].getBankBalance())
                     {
@@ -73,7 +74,7 @@ class LeaderBoard
                     i++;
                 }
 
-                    returnStatement += sharedStatement + "\n with a score of: " + leaderboard[i].getBankBalance();
+                    returnStatement += sharedStatement + "\n with a score of: " + leaderboard[i-1].getBankBalance();
             }
                 
             }

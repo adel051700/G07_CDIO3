@@ -58,7 +58,7 @@ class Monopoly {
             //
             while (!loseCondition)
             {
-                //System.out.println(Gameboard.toString(gameBoard,players));
+                System.out.println(Gameboard.toString(gameBoard,players));
                 System.out.println("\n");
                 
                 playerTurn %= n;
@@ -128,7 +128,22 @@ class Monopoly {
                 }
                 
             }
-            System.out.println(LeaderBoard.printWinner(players,n,gameBoard));
+            Player maxVal = new Player(0,0);
+            Player minVal = new Player(0,0);
+            for (int i = 0; i < players.length; i++)
+            {
+                if (players[i].getBankBalance() > maxVal.getBankBalance())
+                {
+                    maxVal = players[i];
+                }
+                if (players[i].getBankBalance()==0)
+                {
+                    minVal = players[i];
+                }
+            }
+            System.out.println("player number: " + minVal.getNumber() + "has gone bankrupt");
+
+            System.out.println("The Winner is player number: " + maxVal.getNumber() + "\n with a score of " + maxVal.getBankBalance());
             
             }
             catch(IllegalArgumentException e)
