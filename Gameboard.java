@@ -11,7 +11,7 @@ class Gameboard
     public String toString()
     {
       String statement = "";
-      for (int i = 0; i < Gameboard.length; i++)
+      for (int i = 0; i < GameBoard.length; i++)
       {
         statement += GameBoard[i].name;
       }

@@ -20,7 +20,7 @@ public class field {
     {}
 
 
-    public String getDescription(Player player) {
+    public String getDescription(Player player, Player[] playerArr) {
         String returnStatement = "You have landed on " + this.name + ", nothing further happens...";
         return returnStatement;
     }
@@ -32,7 +32,7 @@ class specialField extends field {
     }
 
     @Override
-    public String getDescription(Player player) {
+    public String getDescription(Player player, Player[] playerArr) {
         String returnStatement = "You have landed on " + this.name + "!";
         System.out.println("You now have " + player.getBankBalance() + "$ left");
         return returnStatement;
@@ -52,7 +52,7 @@ class chanceField extends field {
         return cardNumber;
     }
     @Override
-    public String getDescription(Player player){
+    public String getDescription(Player player, Player[] playerArr){
         ChanceCard[] chanceCards = ChanceCard.getChanceCardsFromFile("chancecard.csv");
         var s = new Scanner(System.in);
         int chanceCardNum = drawChanceCard();
@@ -75,7 +75,7 @@ class prisonField extends field {
     }
 
     @Override
-    public String getDescription(Player player){
+    public String (Player player, Player[] playerArr){
         String returnStatement = "You have landed on Go to Prison! " + "You have now been transfered to the prison and the turn is passed on...";
         player.changeIsInPrison();
         return returnStatement;
@@ -110,7 +110,7 @@ class buyableField extends field {
         this.multiplier = multiplier;
     }
     @Override
-    public String getDescription(Player player) {
+    public String getDescription(Player player, Player[] playerArr) {
         String returnStatement = "You landed on " + this.name + " which is a " + this.color + " tile";
         if (owner != null && !owner.equals(player))
         {

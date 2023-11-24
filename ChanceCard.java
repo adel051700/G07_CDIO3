@@ -11,22 +11,6 @@ public class ChanceCard
     private int moneyToChange = 0;
     private int jailFreeCards = 0;
     private boolean drawChance = false;
-
-    public static void main(String[] args) {
-        ChanceCard[] chanceCards = getChanceCardsFromFile("chancecard.csv");
-
-        for (ChanceCard card : chanceCards) {
-            System.out.println("Name: " + card.getName());
-            System.out.println("Text: " + card.getText());
-            System.out.println("Tiles to move: " + card.getTilesToMove());
-            System.out.println("Money to change: " + card.getMoneyToChange());
-            System.out.println("Amount of jail free cards: " + card.getJailFreeCards());
-            System.out.println("\n");
-            System.out.println("------------------------------------------------------------------------------------");
-            System.out.println("\n");
-        }
-
-    }
     
     
     ChanceCard(String name)

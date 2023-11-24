@@ -3,7 +3,7 @@ class Player {
     //private String tokenCharacter = "";
     private Bank account;
     public boolean skipPlayerTurn = false;
-    public boolean isInPrison = true;
+    public boolean isInPrison = false;
     private int position;
 
     public Player (int number, int bankBalance) {
@@ -35,7 +35,7 @@ class Player {
     }
 
     public String toString() {
-        return "Player " + this.number + " " + this.tokenCharacter + System.lineSeparator() + "Bank balance: " + this.account.getBalance();
+        return "Player " + this.number + System.lineSeparator() + "Bank balance: " + this.account.getBalance();
     }
 
     public int getBankBalance() {
