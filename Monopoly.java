@@ -23,10 +23,14 @@ class Monopoly {
                 if (input.isEmpty()) {
                     throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
                 }
-                n = Integer.parseInt(input);
-                
-                
-                //throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
+                try
+                {
+                    n = Integer.parseInt(input);
+                }
+                catch (Exception e)
+                {
+                    throw new IllegalArgumentException("Didnt recieve an integer, Please enter an integer between 2 and 4");
+                }
             
 
             if (n<2 || n>4)
