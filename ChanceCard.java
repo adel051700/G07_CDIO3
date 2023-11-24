@@ -10,15 +10,28 @@ public class ChanceCard
     private int tilesToMove;
     private int moneyToChange;
     private int jailFreeCards;
+    private int changeOtherPlayersBalance;
     
     ChanceCard(String name)
     {
         this.name = name;
     }
 
+    public int getChangePlayersBalance() {
+        return this.changeOtherPlayersBalance;
+    }
+
     public String getName()
     {
         return this.name;
+    }
+    public void setTileName(String tileName)
+    {
+        this.tileName = tileName;
+    }
+    public String getTileName()
+    {
+        return this.tileName;
     }
     
     public String[] getColor()

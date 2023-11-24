@@ -20,6 +20,10 @@ class Field {
     public String getColor() {
         return "";
     }
+    public String getName()
+    {
+        return this.name;
+    }
     public void setMultiplier(int fillerFunctionForFunctionalityInBuyableFields)
     {}
 
@@ -92,7 +96,40 @@ class chanceField extends Field {
         {
             player.setPosition(currChance.getTilesToMove());
         }
+        if (currChance.getMoneyToChange() != 0)
+        {
+            player.setBankBalance(currChance.getMoneyToChange());
+        }
+        if (currChance.getJailFreeCards() != 0 && !player.getOutOfJailFreeCard())
+        {
+            player.changeOutOfJailFreeCard();
+        }
+
+        if(currChance.getTileName() != null) {
+            int currentRoute = 0;
+            for(int j = player.getPosition(); j < gameBoard.length + 1; j++) {
+                currentRoute++;
+                j %= 24;
+                
+                if(currChance.getTileName() == gameBoard[j].getName()) {
+                    player.setPosition(currentRoute);
+                    break;
+                }
+            }
+            }
+        if (currChance.getChangePlayersBalance() != 0)
+        {
+            for (int i = 0; i < playerArr.length; i++)
+            {
+                if (!playerArr[i].equals(player))
+                {
+                    player.setBankBalance(currChance.getChangePlayersBalance());
+                }
+            }
+        }
         
+
+
         
         returnStatement += "\n You now have " + player.getBankBalance() + "$ left";
         return returnStatement;
